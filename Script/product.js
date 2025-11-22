@@ -36,9 +36,19 @@ featureItems.forEach(item => {
     const videoFile = item.dataset.video;
 
     // update video
-    videoSource.src = "videos/" + videoFile;
-    video.load();
-    video.play();
+    // videoSource.src = "videos/" + videoFile;
+    // video.load();
+    // video.play();
+
+
+    video.pause();
+videoSource.src = "videos/" + videoFile;
+video.load();
+
+video.onloadeddata = () => {
+  video.play().catch(() => {});
+};
+
 
     // // Change subtitle text
     // const text = item.querySelector(".feature-subtext p").innerText;
@@ -110,9 +120,17 @@ mobileFeatures.forEach(item => {
 
     // Update video on click
     const videoFile = item.dataset.video;
-    videoSource.src = "videos/" + videoFile;
-    video.load();
-    video.play();
+    // videoSource.src = "videos/" + videoFile;
+    // video.load();
+    // video.play();
+
+       video.pause();
+videoSource.src = "videos/" + videoFile;
+video.load();
+
+video.onloadeddata = () => {
+  video.play().catch(() => {});
+};
   });
 });
 

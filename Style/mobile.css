@@ -15,19 +15,19 @@
 }
 
 /* ===== HERO MOBILE ===== */
-@media (max-width: 768px) {
-      * {
+@media (max-width: 412px) {
+      *{
     max-width: 100% !important;
     overflow-x: hidden !important;
-  }
+  } 
 
-  body, html {
+   body, html {
     width: 100% !important;
     margin: 0 !important;
     padding: 0 !important;
-  }
+  } 
 
-}
+
 
   .hero-inner {
     /* margin-left: 0;
@@ -35,7 +35,7 @@
     padding: 130px 16px;
     text-align: center; */
 
-  width: 90%;
+  width: 100%;
   max-width: 400px;
   margin: 0 auto;
   text-align: center;
@@ -81,12 +81,12 @@
   }
 
 
-
+}
 /* ===== PRODUCT MOBILE ===== */
 /* ===== PRODUCT MOBILE FINAL FIX ===== */
 
 /* ---------- Mobile product scroller fixes (put at end of mobile.css) ---------- */
-@media (max-width: 768px) {
+@media (max-width: 412px) {
 
      
 
@@ -173,7 +173,7 @@
 }
 
 /* ================= MOBILE FEATURE SECTION (FINAL) =================== */
-@media (max-width: 768px) {
+@media (max-width: 412px) {
 
   /* Stack vertically: video first, then cards */
   .features-wrapper {

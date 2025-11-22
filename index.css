@@ -2,7 +2,6 @@ html {
   scroll-behavior: smooth;
 }
 
-<<<<<<< HEAD
 .reveal {
   opacity: 0;
   transform: translateY(20px);
@@ -14,8 +13,6 @@ html {
   transform: translateY(0);
 }
 
-=======
->>>>>>> 6317afbe207c887e8dae44cd957b6d8a0afa61df
 :root{
   --bg-overlay-left: rgba(7,7,7,0.65);
   --bg-overlay-right: rgba(7,7,7,0.05);
@@ -216,7 +213,6 @@ body{
   font-weight:700;
   -webkit-text-stroke: 1px rgba(255,255,255,0.04);
   padding-bottom:30px;
-<<<<<<< HEAD
   padding-top:40px; */
 
  position: relative;
@@ -240,26 +236,10 @@ body{
 
 hero-inner h2 {
   animation-delay: 0.5s;
-=======
-  padding-top:10px;
-}
-
-.hero-inner h1,
-.hero-inner p
-{
-  opacity: 0;
-  transform: translateX(800px);
-  animation: fadeUp 1s ease-out forwards;
-}
-
-hero-inner h1 {
-  animation-delay: 0.3s;
->>>>>>> 6317afbe207c887e8dae44cd957b6d8a0afa61df
 }
 
 .hero-meta
 {
-<<<<<<< HEAD
   width: max-content;
   display: flex;
   gap: 1px;          /* space between items */
@@ -274,15 +254,6 @@ hero-inner h1 {
 
 .hero-meta {
   animation-delay: 0.5s;
-=======
-  opacity: 0;
-  transform: translateX(800px);
-  animation: fadeUp 1s ease-out forwards;
-}
-
-.hero-meta {
-  animation-delay: 0.35s;
->>>>>>> 6317afbe207c887e8dae44cd957b6d8a0afa61df
 }
 
 .sub-headlines{
@@ -321,10 +292,6 @@ hero-inner h1 {
   line-height: 1.7;
   font-size: 1.0rem;
   color: #d0d0d0;
-<<<<<<< HEAD
-
-=======
->>>>>>> 6317afbe207c887e8dae44cd957b6d8a0afa61df
   
 }
 
@@ -364,12 +331,8 @@ hero-inner h1 {
   width: 100%;
 }
 
-<<<<<<< HEAD
 #blog-section
 {
   min-height: 100vh;
   width: 100%;
 }
-=======
-
->>>>>>> 6317afbe207c887e8dae44cd957b6d8a0afa61df

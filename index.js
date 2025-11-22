@@ -74,7 +74,6 @@ window.addEventListener("DOMContentLoaded", () => {
     .catch(err => console.error("Error preloading product:", err));
 });
 
-<<<<<<< HEAD
 //-------------------------------------------------------------------------------------------//
 
 
@@ -94,8 +93,6 @@ window.addEventListener("load", () => {
     }
   }
 });
-=======
->>>>>>> 6317afbe207c887e8dae44cd957b6d8a0afa61df
 
 // Preload Blog section on page load
 window.addEventListener("DOMContentLoaded", () => {
@@ -118,7 +115,6 @@ window.addEventListener("DOMContentLoaded", () => {
     .catch(err => console.error("Error preloading blog:", err));
 });
 
-<<<<<<< HEAD
 
 
 // About us
@@ -154,5 +150,3 @@ window.addEventListener("DOMContentLoaded", () => {
       });
   });
 
-=======
->>>>>>> 6317afbe207c887e8dae44cd957b6d8a0afa61df

@@ -1,4 +1,94 @@
 
+/* ===== PRODUCT MOBILE ===== */
+/* ===== PRODUCT MOBILE FINAL FIX ===== */
+
+/* ---------- Mobile product scroller fixes (put at end of mobile.css) ---------- */
+@media (max-width: 412px) {
+
+     
+
+  .product-left {
+    padding-left: -20cm !important;
+  }
+
+  .product-content {
+    padding-left: 3cm !important;
+  }
+
+  .product-stats {
+    padding-right: 7cm;
+    padding-left: 15cm !important;
+    margin-left: 10px !important;
+    margin-right: 100px !important;
+  }
+
+   .stat:first-child {
+    margin-left: 0 !important;
+  }  
+
+
+  /* Reset any leftover desktop spacing from parent containers */
+  .product-section,
+  .product-left,
+  .product-content {
+    padding: 0 !important;
+    margin: 0 !important;
+    width: 100% !important;
+  }
+
+  /* Make the scroller full width and let items snap from the very left */
+  .product-stats {
+    display: flex;
+    overflow-x: auto;
+    gap: 20px;
+    padding-left: 11cm !important;
+    padding: 18px 12px;               /* small padding so first card isn't flush to edge */
+    /* margin: 0; */
+    width: 80%;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    scroll-padding-left: 12px;        /* ensures snapping accounts for container padding */
+  }
+
+  .product-stats::-webkit-scrollbar { display: none; }
+
+  /* Cards sizing + snapping */
+  .stat {
+    min-width: 85%;
+    flex: 0 0 85%;
+    scroll-snap-align: start;         /* snap to start for each card */
+    background: rgba(255,255,255,0.08);
+    padding: 20px;
+    border-radius: 12px;
+    text-align: center;
+    margin: 0;                        /* ensure no extra left margin */
+  }
+
+  /* Make absolutely sure the first card isn't pushed left by other rules */
+  .product-stats > .stat:first-child {
+    margin-left: 0 !important;
+    padding-left: 12px !important;    /* align visually with container padding */
+  }
+
+  /* Optional: small responsive tweak to improve visibility on very small phones */
+  @media (max-width: 420px) {
+    .stat { min-width: 92%; flex: 0 0 92%; }
+    .product-stats { padding-left: 12px; padding-right: 12px; }
+  }
+
+  .product-description{
+    text-align: center;
+    padding: 2cm;
+  }
+  .product-section{
+        margin-bottom: 60px !important;   /* reduce bottom space */
+    padding-bottom: 0 !important;
+  }
+   .features-section {
+    margin-top: -5cm !important;   /* reduce gap at the top */
+  }
+}
+
 .hero-title {
   text-align: center;
   width: 100%;
@@ -258,4 +348,28 @@
   .feature-item.active .feature-subtext {
     display: block;
   }
+}
+
+
+/* ================= CONTACT S SECTION =================== */
+@media (max-width: 412px) {
+.title{
+    text-align: center; 
+    margin-top: 30px;
+    font-size: 2.2rem;
+    font-family: sans-serif;
+}
+
+.contact-form{
+  width:  80%;
+  margin-left: 45px;
+ 
+}
+.submit-btn{
+  margin-left: 85px;
+  font-size: 15px;
+}
+
+
+
 }

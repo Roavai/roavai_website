@@ -15,10 +15,12 @@
 
 /* Form */
 .contact-form {
-  
+
   width: 60%;
   margin-top: 20px;
   margin-left: 350px;
+  padding-bottom: 2cm;
+
 }
 
 /* Row fields */
@@ -29,8 +31,9 @@
 }
 
 /* Input + textarea styling */
-input, textarea {
-  
+input,
+textarea {
+
   background: #0d0d0d;
   border: none;
   color: white;

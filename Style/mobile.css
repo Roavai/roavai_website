@@ -1,11 +1,10 @@
-
 /* ===== PRODUCT MOBILE ===== */
 /* ===== PRODUCT MOBILE FINAL FIX ===== */
 
 /* ---------- Mobile product scroller fixes (put at end of mobile.css) ---------- */
 @media (max-width: 412px) {
 
-     
+
 
   .product-left {
     padding-left: -20cm !important;
@@ -22,9 +21,9 @@
     margin-right: 100px !important;
   }
 
-   .stat:first-child {
+  .stat:first-child {
     margin-left: 0 !important;
-  }  
+  }
 
 
   /* Reset any leftover desktop spacing from parent containers */
@@ -42,50 +41,68 @@
     overflow-x: auto;
     gap: 20px;
     padding-left: 11cm !important;
-    padding: 18px 12px;               /* small padding so first card isn't flush to edge */
+    padding: 18px 12px;
+    /* small padding so first card isn't flush to edge */
     /* margin: 0; */
     width: 80%;
     scroll-snap-type: x mandatory;
     -webkit-overflow-scrolling: touch;
-    scroll-padding-left: 12px;        /* ensures snapping accounts for container padding */
+    scroll-padding-left: 12px;
+    /* ensures snapping accounts for container padding */
   }
 
-  .product-stats::-webkit-scrollbar { display: none; }
+  .product-stats::-webkit-scrollbar {
+    display: none;
+  }
 
   /* Cards sizing + snapping */
   .stat {
     min-width: 85%;
     flex: 0 0 85%;
-    scroll-snap-align: start;         /* snap to start for each card */
-    background: rgba(255,255,255,0.08);
+    scroll-snap-align: start;
+    /* snap to start for each card */
+    background: rgba(255, 255, 255, 0.08);
     padding: 20px;
     border-radius: 12px;
     text-align: center;
-    margin: 0;                        /* ensure no extra left margin */
+    margin: 0;
+    /* ensure no extra left margin */
   }
 
   /* Make absolutely sure the first card isn't pushed left by other rules */
-  .product-stats > .stat:first-child {
+  .product-stats>.stat:first-child {
     margin-left: 0 !important;
-    padding-left: 12px !important;    /* align visually with container padding */
+    padding-left: 12px !important;
+    /* align visually with container padding */
   }
 
   /* Optional: small responsive tweak to improve visibility on very small phones */
   @media (max-width: 420px) {
-    .stat { min-width: 92%; flex: 0 0 92%; }
-    .product-stats { padding-left: 12px; padding-right: 12px; }
+    .stat {
+      min-width: 92%;
+      flex: 0 0 92%;
+    }
+
+    .product-stats {
+      padding-left: 12px;
+      padding-right: 12px;
+    }
   }
 
-  .product-description{
+  .product-description {
     text-align: center;
     padding: 2cm;
   }
-  .product-section{
-        margin-bottom: 60px !important;   /* reduce bottom space */
+
+  .product-section {
+    margin-bottom: 60px !important;
+    /* reduce bottom space */
     padding-bottom: 0 !important;
   }
-   .features-section {
-    margin-top: -5cm !important;   /* reduce gap at the top */
+
+  .features-section {
+    margin-top: -5cm !important;
+    /* reduce gap at the top */
   }
 }
 
@@ -93,6 +110,7 @@
   text-align: center;
   width: 100%;
 }
+
 .hero-meta {
   display: flex;
   justify-content: center;
@@ -101,12 +119,13 @@
 }
 
 .meta-line {
-  white-space: nowrap; /* so text stays in one line */
+  white-space: nowrap;
+  /* so text stays in one line */
 }
 
 /* ===== HERO MOBILE ===== */
 @media (max-width: 412px) {
-      /* *{
+  /* *{
     max-width: 100% !important;
     overflow-x: hidden !important;
   } 
@@ -117,10 +136,12 @@
     padding: 0 !important;
   }  */
 
-  body, html {
-  width: 100%;
-  overflow-x: hidden;   /* Prevent full page sideways scroll only */
-}
+  body,
+  html {
+    width: 100%;
+    overflow-x: hidden;
+    /* Prevent full page sideways scroll only */
+  }
 
 
   .hero-inner {
@@ -129,10 +150,10 @@
     padding: 130px 16px;
     text-align: center; */
 
-  width: 100%;
-  max-width: 400px;
-  margin: 0 auto;
-  text-align: center;
+    width: 100%;
+    max-width: 400px;
+    margin: 0 auto;
+    text-align: center;
   }
 
 
@@ -140,7 +161,8 @@
     left: 0;
     right: 4cm;
     margin-top: 2rem;
-    font-size: 3rem; /* smaller heading */
+    font-size: 3rem;
+    /* smaller heading */
   }
 
   .tag {
@@ -158,10 +180,12 @@
 
   .hero-meta {
     margin-top: 0.8cm;
-    flex-wrap: wrap;       /* allow wrapping */
+    flex-wrap: wrap;
+    /* allow wrapping */
     width: 100%;
     padding-left: 0;
-    margin-left: -30px;   /* adjust value as needed */
+    margin-left: -30px;
+    /* adjust value as needed */
     justify-content: center;
     text-align: center;
 
@@ -176,13 +200,14 @@
 
 
 }
+
 /* ===== PRODUCT MOBILE ===== */
 /* ===== PRODUCT MOBILE FINAL FIX ===== */
 
 /* ---------- Mobile product scroller fixes (put at end of mobile.css) ---------- */
 @media (max-width: 412px) {
 
-     
+
 
   .product-left {
     padding-left: -20cm !important;
@@ -199,9 +224,9 @@
     margin-right: 100px !important;
   }
 
-   .stat:first-child {
+  .stat:first-child {
     margin-left: 0 !important;
-  }  
+  }
 
 
   /* Reset any leftover desktop spacing from parent containers */
@@ -219,50 +244,68 @@
     overflow-x: auto;
     gap: 20px;
     padding-left: 11cm !important;
-    padding: 18px 12px;               /* small padding so first card isn't flush to edge */
+    padding: 18px 12px;
+    /* small padding so first card isn't flush to edge */
     /* margin: 0; */
     width: 80%;
     scroll-snap-type: x mandatory;
     -webkit-overflow-scrolling: touch;
-    scroll-padding-left: 12px;        /* ensures snapping accounts for container padding */
+    scroll-padding-left: 12px;
+    /* ensures snapping accounts for container padding */
   }
 
-  .product-stats::-webkit-scrollbar { display: none; }
+  .product-stats::-webkit-scrollbar {
+    display: none;
+  }
 
   /* Cards sizing + snapping */
   .stat {
     min-width: 85%;
     flex: 0 0 85%;
-    scroll-snap-align: start;         /* snap to start for each card */
-    background: rgba(255,255,255,0.08);
+    scroll-snap-align: start;
+    /* snap to start for each card */
+    background: rgba(255, 255, 255, 0.08);
     padding: 20px;
     border-radius: 12px;
     text-align: center;
-    margin: 0;                        /* ensure no extra left margin */
+    margin: 0;
+    /* ensure no extra left margin */
   }
 
   /* Make absolutely sure the first card isn't pushed left by other rules */
-  .product-stats > .stat:first-child {
+  .product-stats>.stat:first-child {
     margin-left: 0 !important;
-    padding-left: 12px !important;    /* align visually with container padding */
+    padding-left: 12px !important;
+    /* align visually with container padding */
   }
 
   /* Optional: small responsive tweak to improve visibility on very small phones */
   @media (max-width: 420px) {
-    .stat { min-width: 92%; flex: 0 0 92%; }
-    .product-stats { padding-left: 12px; padding-right: 12px; }
+    .stat {
+      min-width: 92%;
+      flex: 0 0 92%;
+    }
+
+    .product-stats {
+      padding-left: 12px;
+      padding-right: 12px;
+    }
   }
 
-  .product-description{
+  .product-description {
     text-align: center;
     padding: 2cm;
   }
-  .product-section{
-        margin-bottom: 60px !important;   /* reduce bottom space */
+
+  .product-section {
+    margin-bottom: 60px !important;
+    /* reduce bottom space */
     padding-bottom: 0 !important;
   }
-   .features-section {
-    margin-top: -5cm !important;   /* reduce gap at the top */
+
+  .features-section {
+    margin-top: -5cm !important;
+    /* reduce gap at the top */
   }
 }
 
@@ -281,7 +324,8 @@
   .feature-video-area {
     width: 100% !important;
     padding: 0 12px !important;
-    order: 1 !important;   /* show BEFORE feature cards */
+    order: 1 !important;
+    /* show BEFORE feature cards */
   }
 
   #featureVideo {
@@ -292,7 +336,8 @@
 
   /* Horizontal scroll bar for feature cards */
   .features-list {
-    order: 2 !important;   /* show AFTER video */
+    order: 2 !important;
+    /* show AFTER video */
     display: flex !important;
     flex-direction: row !important;
     overflow-x: auto !important;
@@ -310,18 +355,21 @@
 
   /* Feature cards */
   .feature-item {
-    flex: 0 0 240px !important;  /* fixed width → horizontal alignment */
+    flex: 0 0 240px !important;
+    /* fixed width → horizontal alignment */
     background: #111;
     padding: 14px 16px;
     border-radius: 16px;
     scroll-snap-align: center;
     color: white;
-    white-space: normal;   /* text inside can wrap */
+    white-space: normal;
+    /* text inside can wrap */
     /* transition: 0.25s ease; */
     position: relative;
 
-      height: 58px;        /* adjust height to fit your title line */
-    overflow: hidden;     
+    height: 58px;
+    /* adjust height to fit your title line */
+    overflow: hidden;
     transition: 0.25s ease;
   }
 
@@ -354,30 +402,31 @@
 
 /* ================= BLOG SECTION =================== */
 @media (max-width: 412px) {
-.blog-section {
+  .blog-section {
     width: 100%;
-  height: 100vh;
-  align-items: center;
-  text-align: center;
+    height: 100vh;
+    align-items: center;
+    text-align: center;
   }
-  /* Text content  */
-.blog-content{
-    position: relative;
-  margin-right: 80px;
-}
 
-/* .blog-content h2{
+  /* Text content  */
+  .blog-content {
+    position: relative;
+    margin-right: 80px;
+  }
+
+  /* .blog-content h2{
   font-size: 1rem;
   margin-top: 50px;
 } */
-.blog-card{
+  .blog-card {
     width: 90px;
     font-size: 0.5rem;
-  line-height: 1;
-}
+    line-height: 1;
+  }
 
- .blog-preview h2 {
-  margin-bottom: 20px;
+  .blog-preview h2 {
+    margin-bottom: 20px;
     font-size: 1.2rem;
   }
 
@@ -387,25 +436,66 @@
 
 }
 
+/*========== About Us Section Mobile Fix ==========*/
+@media (max-width: 520px) {
+
+  .about-title {
+    font-size: 3.5rem !important;
+    font-style: italic !important;
+    margin-top: 30px;
+    margin-bottom: 12px;
+    text-align: center;
+    z-index: 10;
+  }
+
+  .about-reveal-text {
+    font-size: 2.8rem !important;
+    font-style: italic !important;
+
+    line-height: 1.35;
+    top: 58% !important;
+    /* little down */
+    transform: translateY(-70%) !important;
+    transition: opacity .40s, transform .40s;
+
+    /* padding: 30px 70px; */
+    text-shadow: 0px 4px 18px rgba(0, 0, 0, 0.65);
+    /* readability */
+  }
+
+  .about-reveal-text.fade {
+    opacity: 0;
+    transform: translateY(-20%);
+  }
+
+  .about-scroll-box::after {
+    content: "";
+    display: block;
+    height: 200vh;
+    /* controls how long the user scrolls */
+  }
+
+}
+
 /* ================= CONTACT US SECTION =================== */
 @media (max-width: 412px) {
-.title{
-    text-align: center; 
+  .title {
+    text-align: center;
     margin-top: 30px;
     font-size: 2.2rem;
     font-family: sans-serif;
-}
+  }
 
-.contact-form{
-  width:  80%;
-  margin-left: 45px;
- 
-}
-.submit-btn{
-  margin-left: 85px;
-  font-size: 15px;
-}
+  .contact-form {
+    width: 80%;
+    margin-left: 45px;
+    padding-bottom: 2cm;
+  }
 
+  .submit-btn {
+    margin-left: 85px;
+    font-size: 15px;
+  }
 
 
 }

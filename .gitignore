@@ -1,0 +1,22 @@
+# Node modules
+node_modules/
+
+# Logs
+*.log
+
+# IDE settings
+.vscode/
+
+# Sensitive files
+credentials.json
+
+# Generated files
+contact-data.xlsx
+
+# Build output
+dist/
+build/
+
+# System files
+.DS_Store
+Thumbs.db

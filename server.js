@@ -39,7 +39,6 @@
 // // Start server
 // app.listen(5000, () => console.log("Server running on port 5000"));
 
-
 //----------------------------------------------------------------------------------------------------
 
 // server.js
@@ -124,8 +123,6 @@
 //   process.exit(1);
 // });
 
-
-
 const { google } = require("googleapis");
 const express = require("express");
 const cors = require("cors");
@@ -134,9 +131,19 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
+// Load credentials JSON using environment variable
+const CREDENTIALS_PATH = process.env.CREDENTIALS_PATH;
+
 // Load credentials JSON
+if (!CREDENTIALS_PATH) {
+  console.error(
+    "Missing CREDENTIALS_PATH environment variable. Set it to your service account JSON file path."
+  );
+  process.exit(1);
+}
+
 const auth = new google.auth.GoogleAuth({
-  keyFile: "credentials.json",   // your JSON file
+  keyFile: CREDENTIALS_PATH, // your JSON file
   scopes: ["https://www.googleapis.com/auth/spreadsheets"],
 });
 
@@ -165,7 +172,4 @@ app.post("/save", async (req, res) => {
   }
 });
 
-app.listen(5000, () =>
-  console.log("Server running on http://localhost:5000")
-);
-
+app.listen(5000, () => console.log("Server running on http://localhost:5000"));

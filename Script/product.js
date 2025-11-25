@@ -17,14 +17,12 @@ const video = document.getElementById("featureVideo");
 const videoSource = video.querySelector("source");
 const subtitleBox = document.getElementById("videoSubtitle");
 
-
-featureItems.forEach(item => {
+featureItems.forEach((item) => {
   item.addEventListener("mouseenter", () => {
-
     // remove active class
     document.querySelector(".feature-item.active")?.classList.remove("active");
 
-     document.querySelectorAll(".feature-item").forEach(i => {
+    document.querySelectorAll(".feature-item").forEach((i) => {
       if (i !== item) i.classList.remove("open");
     });
 
@@ -32,7 +30,7 @@ featureItems.forEach(item => {
     // add active class to clicked
     item.classList.add("active");
 
-     // get file
+    // get file
     const videoFile = item.dataset.video;
 
     // update video
@@ -40,15 +38,13 @@ featureItems.forEach(item => {
     // video.load();
     // video.play();
 
+    video.pause();
+    videoSource.src = "Videos/" + videoFile;
+    video.load();
 
-  video.pause();
-  videoSource.src = "Videos/" + videoFile;
-  video.load();
-
-  video.onloadeddata = () => {
-  video.play().catch(() => {});
-};
-
+    video.onloadeddata = () => {
+      video.play().catch(() => {});
+    };
   });
 });
 
@@ -61,7 +57,6 @@ if (window.innerWidth > 412) {
   const videoSource = video.querySelector("source");
   const subtitleBox = document.getElementById("videoSubtitle");
 
-
   // featureItems.forEach(item => {
   //   item.addEventListener("mouseenter", () => {
   //     document.querySelector(".feature-item.active")?.classList.remove("active");
@@ -72,62 +67,60 @@ if (window.innerWidth > 412) {
   //     video.load();
   //     video.play();
 
-  featureItems.forEach(item => {
-  item.addEventListener("mouseenter", () => {
+  featureItems.forEach((item) => {
+    item.addEventListener("mouseenter", () => {
+      // remove active class
+      document
+        .querySelector(".feature-item.active")
+        ?.classList.remove("active");
 
-    // remove active class
-    document.querySelector(".feature-item.active")?.classList.remove("active");
+      document.querySelectorAll(".feature-item").forEach((i) => {
+        if (i !== item) i.classList.remove("open");
+      });
 
-     document.querySelectorAll(".feature-item").forEach(i => {
-      if (i !== item) i.classList.remove("open");
-    });
+      item.classList.add("open");
+      // add active class to clicked
+      item.classList.add("active");
 
-    item.classList.add("open");
-    // add active class to clicked
-    item.classList.add("active");
+      // get file
+      const videoFile = item.dataset.video;
 
-    // get file
-    const videoFile = item.dataset.video;
-
-    // update video
-    videoSource.src = "Videos/" + videoFile;
-    video.load();
-    video.play();
+      // update video
+      videoSource.src = "Videos/" + videoFile;
+      video.load();
+      video.play();
     });
   });
 
+  // Desktop video hover
+  // const mobileFeatures = document.querySelectorAll(".feature-item");
 
-// Desktop video hover
-// const mobileFeatures = document.querySelectorAll(".feature-item");
+  // // Mobile click to toggle
+  mobileFeatures.forEach((item) => {
+    item.addEventListener("click", () => {
+      // Close others
+      mobileFeatures.forEach((f) => {
+        if (f !== item) f.classList.remove("active");
+      });
 
-// // Mobile click to toggle
-mobileFeatures.forEach(item => {
-  item.addEventListener("click", () => {
+      // Toggle current card
+      item.classList.toggle("active");
 
-    // Close others
-    mobileFeatures.forEach(f => {
-      if (f !== item) f.classList.remove("active");
+      // Update video on click
+      const videoFile = item.dataset.video;
+      // videoSource.src = "videos/" + videoFile;
+      // video.load();
+      // video.play();
+
+      video.pause();
+      videoSource.src = "Videos/" + videoFile;
+      video.load();
+
+      video.onloadeddata = () => {
+        video.play().catch(() => {});
+      };
     });
-
-    // Toggle current card
-    item.classList.toggle("active");
-
-    // Update video on click
-    const videoFile = item.dataset.video;
-    // videoSource.src = "videos/" + videoFile;
-    // video.load();
-    // video.play();
-
-       video.pause();
-videoSource.src = "Videos/" + videoFile;
-video.load();
-
-video.onloadeddata = () => {
-  video.play().catch(() => {});
-};
   });
-});
-
 }
 
 // mobileFeatures.forEach(item => {
@@ -140,7 +133,6 @@ video.onloadeddata = () => {
 //     item.classList.toggle("active");
 //   });
 // });
-
 
 // Optional: hide text when leaving left menu
 // document.querySelector(".features-list").addEventListener("mouseleave", () => {

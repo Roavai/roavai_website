@@ -30,8 +30,6 @@
 //   });
 // });
 
-
-
 //--------------------------------------------------------------------------------------------//
 // --------------------------------------
 // SAFE NAVBAR SCROLL
@@ -41,8 +39,8 @@ document.addEventListener("DOMContentLoaded", () => {
   const navLinks = document.querySelectorAll("nav a");
 
   if (navLinks.length > 0) {
-    navLinks.forEach(link => {
-      link.addEventListener("click", e => {
+    navLinks.forEach((link) => {
+      link.addEventListener("click", (e) => {
         const target = link.getAttribute("href");
         if (target && target.startsWith("#")) {
           e.preventDefault();
@@ -54,12 +52,12 @@ document.addEventListener("DOMContentLoaded", () => {
       });
     });
   }
-//});
+  //});
 
-// --------------------------------------
-// SAFE BLOG "READ MORE" LOADER
-// --------------------------------------
- // BLOG LOAD LOGIC
+  // --------------------------------------
+  // SAFE BLOG "READ MORE" LOADER
+  // --------------------------------------
+  // BLOG LOAD LOGIC
   const readMoreBtn = document.getElementById("readMoreBtn");
   const blogFullContent = document.getElementById("blogFullContent");
 
@@ -68,17 +66,16 @@ document.addEventListener("DOMContentLoaded", () => {
     return;
   }
 
-  
   // If blog exists → activate read more
   readMoreBtn.addEventListener("click", (e) => {
     e.preventDefault();
 
     fetch("Pages/blogDetails.html")
-      .then(res => res.text())
-      .then(data => {
+      .then((res) => res.text())
+      .then((data) => {
         blogFullContent.innerHTML = data;
         blogFullContent.scrollIntoView({ behavior: "smooth" });
       })
-      .catch(err => console.error("⚠ Error loading blog:", err));
+      .catch((err) => console.error("⚠ Error loading blog:", err));
   });
 });

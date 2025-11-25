@@ -1,31 +1,31 @@
-
 // drawer control
-const openMenu = document.getElementById('openMenu');
-const closeMenu = document.getElementById('closeMenu');
-const sideDrawer = document.getElementById('sideDrawer');
-const overlay = document.getElementById('overlay');
+const openMenu = document.getElementById("openMenu");
+const closeMenu = document.getElementById("closeMenu");
+const sideDrawer = document.getElementById("sideDrawer");
+const overlay = document.getElementById("overlay");
 
 function openDrawer() {
-  sideDrawer.classList.add('open');
-  overlay.classList.add('show');
+  sideDrawer.classList.add("open");
+  overlay.classList.add("show");
   overlay.hidden = false;
-  sideDrawer.setAttribute('ariahidden', 'false');
+  sideDrawer.setAttribute("ariahidden", "false");
 }
 function closeDrawer() {
-  sideDrawer.classList.remove('open');
-  overlay.classList.remove('show');
+  sideDrawer.classList.remove("open");
+  overlay.classList.remove("show");
   // hide overlay after transition
-  setTimeout(()=> overlay.hidden = true, 300);
-  sideDrawer.setAttribute('aria-hidden', 'true');
+  setTimeout(() => (overlay.hidden = true), 300);
+  sideDrawer.setAttribute("aria-hidden", "true");
 }
 
-openMenu.addEventListener('click', openDrawer);
-closeMenu.addEventListener('click', closeDrawer);
-overlay.addEventListener('click', closeDrawer);
+openMenu.addEventListener("click", openDrawer);
+closeMenu.addEventListener("click", closeDrawer);
+overlay.addEventListener("click", closeDrawer);
 
 // close on Esc
-document.addEventListener('keydown', (e)=>{
-  if(e.key === 'Escape' && sideDrawer.classList.contains('open')) closeDrawer();
+document.addEventListener("keydown", (e) => {
+  if (e.key === "Escape" && sideDrawer.classList.contains("open"))
+    closeDrawer();
 });
 
 // Scroll to Home
@@ -33,7 +33,7 @@ document.addEventListener('keydown', (e)=>{
 document.addEventListener("DOMContentLoaded", () => {
   const links = document.querySelectorAll(".navHome");
 
-  links.forEach(link => {
+  links.forEach((link) => {
     link.addEventListener("click", (e) => {
       e.preventDefault();
 
@@ -43,21 +43,20 @@ document.addEventListener("DOMContentLoaded", () => {
       if (targetSection) {
         targetSection.scrollIntoView({
           behavior: "smooth",
-          block: "start"
+          block: "start",
         });
       }
     });
   });
 });
 
-
 // Load Product page dynamically
 
 // Preload product section on page load
 window.addEventListener("DOMContentLoaded", () => {
   fetch("Pages/product.html")
-    .then(res => res.text())
-    .then(data => {
+    .then((res) => res.text())
+    .then((data) => {
       document.getElementById("product").innerHTML = data;
 
       // Load Product CSS
@@ -71,16 +70,12 @@ window.addEventListener("DOMContentLoaded", () => {
       script.src = "Script/product.js";
       document.body.appendChild(script);
     })
-    .catch(err => console.error("Error preloading product:", err));
+    .catch((err) => console.error("Error preloading product:", err));
 });
 
 //-------------------------------------------------------------------------------------------//
 
-
-
 //-----------------------------------------------------------------------------------------//
-
-
 
 // Load Blog page dynamically
 window.addEventListener("load", () => {
@@ -97,8 +92,8 @@ window.addEventListener("load", () => {
 // Preload Blog section on page load
 window.addEventListener("DOMContentLoaded", () => {
   fetch("Pages/blog.html")
-    .then(res => res.text())
-    .then(data => {
+    .then((res) => res.text())
+    .then((data) => {
       document.getElementById("blog").innerHTML = data;
 
       // Load Blog CSS
@@ -112,18 +107,16 @@ window.addEventListener("DOMContentLoaded", () => {
       script.src = "Script/blog.js";
       document.body.appendChild(script);
     })
-    .catch(err => console.error("Error preloading blog:", err));
+    .catch((err) => console.error("Error preloading blog:", err));
 });
-
-
 
 // About us
 // Load About Us page
 // PRELOAD ABOUT US SECTION ON PAGE LOAD
 window.addEventListener("DOMContentLoaded", () => {
   fetch("Pages/aboutUs.html")
-    .then(res => res.text())
-    .then(data => {
+    .then((res) => res.text())
+    .then((data) => {
       document.getElementById("aboutUs").innerHTML = data;
 
       // Load About CSS
@@ -137,16 +130,14 @@ window.addEventListener("DOMContentLoaded", () => {
       script.src = "Script/aboutUs.js";
       document.body.appendChild(script);
     })
-    .catch(err => console.error("Error loading About Us:", err));
+    .catch((err) => console.error("Error loading About Us:", err));
 });
-
 
 // Load contact.html inside index page
 window.addEventListener("DOMContentLoaded", () => {
-    fetch("Pages/contactUs.html")
-      .then(response => response.text())
-      .then(data => {
-        document.getElementById("contact-container").innerHTML = data;
-      });
-  });
-
+  fetch("Pages/contactUs.html")
+    .then((response) => response.text())
+    .then((data) => {
+      document.getElementById("contact-container").innerHTML = data;
+    });
+});

@@ -7,8 +7,9 @@ node_modules
 # IDE settings
 .vscode
 
-# Sensitive files
+creds.json
 credentials.json
+*.json
 
 # Generated files
 contact-data.xlsx
@@ -20,3 +21,10 @@ build/
 # System files
 .DS_Store
 Thumbs.db
+
+# Environment variables (never commit!)
+.env
+.env.local
+.env.* 
+.vercel
+.env*.local

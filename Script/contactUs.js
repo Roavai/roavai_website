@@ -9,10 +9,21 @@ function initContactUs() {
       const message = document.getElementById("message").value;
 
       // AUTO DETECT: local dev or production
-      const isLocal =
-        window.location.hostname === "localhost" ||
-        window.location.hostname === "127.0.0.1";
-      const apiUrl = isLocal ? "http://localhost:5010/save" : "/api/save";
+      const hostname = window.location.hostname;
+
+      const isLocalDev =
+        hostname === "localhost" ||
+        hostname === "127.0.0.1" ||
+        hostname === "0.0.0.0";
+
+      const isVercel =
+        hostname.includes("vercel.app") || hostname.endsWith(".vercel.app");
+
+      const useLocalBackend = isLocalDev && !isVercel;
+
+      const apiUrl = useLocalBackend
+        ? "http://localhost:5001/save"
+        : "/api/save"; // ← preview + production + any other host
 
       try {
         const response = await fetch(apiUrl, {

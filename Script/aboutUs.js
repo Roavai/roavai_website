@@ -13,7 +13,7 @@ textBox.addEventListener("scroll", () => {
   last = textBox.scrollTop;
   progress += diff;
 
-  const STEP = 120; // scroll distance required to change text
+  const STEP = 120; // scrolling distance required to change text
 
   if (progress > STEP && i < words.length - 1) {
     text.classList.add("fade");

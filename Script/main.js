@@ -8,8 +8,8 @@ function loadPage(sectionId, filePath) {
     .catch((err) => console.error("Error loading page:", err));
 }
 
-// Load all pages
-loadPage("home", "Pages/Home.html");
-loadPage("product", "Pages/Product.html");
-loadPage("blog", "Pages/Blog.html");
-loadPage("about", "Pages/AboutUs.html");
+// Load all page
+loadPage("home", "View/Home.html");
+loadPage("product", "View/Product.html");
+loadPage("blog", "View/Blog.html");
+loadPage("about", "View/AboutUs.html");

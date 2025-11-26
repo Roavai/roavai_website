@@ -1,3 +1,4 @@
+// server.js — ONLY for local development
 require("dotenv").config();
 const { google } = require("googleapis");
 const express = require("express");
@@ -9,30 +10,21 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
-console.log("Starting server...");
-
-// ——————— CREDENTIALS LOADER  ———————
 let credentials;
-
-if (fs.existsSync(path.join(__dirname, "creds.json"))) {
-  console.log("Using local creds.json (local development)");
-  credentials = JSON.parse(
-    fs.readFileSync(path.join(__dirname, "creds.json"), "utf8")
-  );
+if (fs.existsSync("creds.json")) {
+  credentials = JSON.parse(fs.readFileSync("creds.json", "utf8"));
 } else {
-  throw new Error("No credentials found anywhere!");
+  console.error("creds.json not found! Teammates: place it in project root.");
+  process.exit(1);
 }
 
 const SHEET_ID = credentials.sheet_id;
-if (!SHEET_ID) throw new Error("Add 'sheet_id' to your creds.json!");
-
 const auth = new google.auth.GoogleAuth({
   credentials,
   scopes: ["https://www.googleapis.com/auth/spreadsheets"],
 });
 const sheets = google.sheets({ version: "v4", auth });
 
-// ——————— ROUTE ———————
 app.post("/save", async (req, res) => {
   const { name, email, message } = req.body;
   try {
@@ -42,14 +34,13 @@ app.post("/save", async (req, res) => {
       valueInputOption: "USER_ENTERED",
       resource: { values: [[name, email, message]] },
     });
-    res.json({ message: "Success!" });
+    res.json({ message: "Submitted successfully!" });
   } catch (err) {
-    console.error("Google Sheets error:", err.message);
-    res.status(500).json({ error: "Failed", details: err.message });
+    console.error(err);
+    res.status(500).json({ error: err.message });
   }
 });
 
-const PORT = process.env.PORT || 5010;
-app.listen(PORT, () => {
-  console.log(`Server LIVE on port ${PORT}`);
-});
+app.listen(5010, () =>
+  console.log("Local backend running → http://localhost:5010")
+);

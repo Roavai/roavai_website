@@ -70,7 +70,7 @@ document.addEventListener("DOMContentLoaded", () => {
   readMoreBtn.addEventListener("click", (e) => {
     e.preventDefault();
 
-    fetch("Pages/blogDetails.html")
+    fetch("View/blogDetails.html")
       .then((res) => res.text())
       .then((data) => {
         blogFullContent.innerHTML = data;

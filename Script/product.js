@@ -1,4 +1,4 @@
-console.log("Product page loaded successfully!");
+console.log("Product View loaded successfully!");
 window.addEventListener("DOMContentLoaded", () => {
   const content = document.querySelector(".product-content");
   content.style.opacity = "0";

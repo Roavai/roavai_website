@@ -8,13 +8,12 @@ function openDrawer() {
   sideDrawer.classList.add("open");
   overlay.classList.add("show");
   overlay.hidden = false;
-  sideDrawer.setAttribute("ariahidden", "false");
+  sideDrawer.setAttribute("aria-hidden", "false");
 }
 function closeDrawer() {
   sideDrawer.classList.remove("open");
   overlay.classList.remove("show");
-  // hide overlay after transition
-  setTimeout(() => (overlay.hidden = true), 300);
+  overlay.hidden = true;
   sideDrawer.setAttribute("aria-hidden", "true");
 }
 
@@ -22,122 +21,75 @@ openMenu.addEventListener("click", openDrawer);
 closeMenu.addEventListener("click", closeDrawer);
 overlay.addEventListener("click", closeDrawer);
 
-// close on Esc
 document.addEventListener("keydown", (e) => {
   if (e.key === "Escape" && sideDrawer.classList.contains("open"))
     closeDrawer();
 });
 
-// Scroll to Home
-
+// Smooth scroll
 document.addEventListener("DOMContentLoaded", () => {
-  const links = document.querySelectorAll(".navHome");
-
-  links.forEach((link) => {
-    link.addEventListener("click", (e) => {
-      e.preventDefault();
-
-      const targetId = link.getAttribute("href").substring(1); // remove '#'
-      const targetSection = document.getElementById(targetId);
-
-      if (targetSection) {
-        targetSection.scrollIntoView({
-          behavior: "smooth",
-          block: "start",
-        });
-      }
-    });
+const links = document.querySelectorAll(".navHome");
+links.forEach((link) => {
+  link.addEventListener("click", (e) => {
+    e.preventDefault();
+    const targetId = link.getAttribute("href").substring(1);
+    const targetSection = document.getElementById(targetId);
+    if (targetSection) {
+      targetSection.scrollIntoView({
+        behavior: "smooth",
+        block: "start",
+      });
+    }
+    if (sideDrawer.classList.contains("open")) {
+      closeDrawer();
+    }
   });
 });
 
-// Load Product page dynamically
+  /**
+   * Dynamically loads a section's HTML, CSS, and JS.
+   * @param {string} name - The name of the section (e.g., 'product', 'blog').
+   * @param {string} containerId - The ID of the element to inject HTML into.
+   * @param {boolean} hasCss - Whether to load a corresponding CSS file.
+   * @param {boolean} hasJs - Whether to load a corresponding JS file.
+   */
+  const loadSection = (name, containerId, hasCss = false, hasJs = false) => {
+    fetch(`Pages/${name}.html`)
+      .then((res) => (res.ok ? res.text() : Promise.reject(`Failed to load ${name}.html`)))
+      .then((data) => {
+        document.getElementById(containerId).innerHTML = data;
 
-// Preload product section on page load
-window.addEventListener("DOMContentLoaded", () => {
-  fetch("Pages/product.html")
-    .then((res) => res.text())
-    .then((data) => {
-      document.getElementById("product").innerHTML = data;
+        if (hasCss) {
+          const link = document.createElement("link");
+          link.rel = "stylesheet";
+          link.href = `Style/${name}.css`;
+          document.head.appendChild(link);
+        }
 
-      // Load Product CSS
-      let link = document.createElement("link");
-      link.rel = "stylesheet";
-      link.href = "Style/product.css";
-      document.head.appendChild(link);
+        if (hasJs) {
+          const script = document.createElement("script");
+          script.src = `Script/${name}.js`;
+          document.body.appendChild(script);
+        }
+      })
+      .catch((err) => console.error(`Error loading ${name}:`, err));
+  };
 
-      // Load Product JS
-      let script = document.createElement("script");
-      script.src = "Script/product.js";
-      document.body.appendChild(script);
-    })
-    .catch((err) => console.error("Error preloading product:", err));
+  // Preload all dynamic sections
+  loadSection("product", "product", true, true);
+  loadSection("blog", "blog", true, true);
+  loadSection("aboutUs", "aboutUs", true, true);
 });
 
-//-------------------------------------------------------------------------------------------//
-
-//-----------------------------------------------------------------------------------------//
-
-// Load Blog page dynamically
+// Scroll to blog section if URL hash is #blog on initial load
 window.addEventListener("load", () => {
   if (window.location.hash === "#blog") {
     const target = document.getElementById("blog");
     if (target) {
+      // Use a small timeout to ensure content is loaded and layout is stable
       setTimeout(() => {
         target.scrollIntoView({ behavior: "smooth" });
-      }, 200); // delay to wait for layout to settle
+      }, 200);
     }
   }
-});
-
-// Preload Blog section on page load
-window.addEventListener("DOMContentLoaded", () => {
-  fetch("Pages/blog.html")
-    .then((res) => res.text())
-    .then((data) => {
-      document.getElementById("blog").innerHTML = data;
-
-      // Load Blog CSS
-      let link = document.createElement("link");
-      link.rel = "stylesheet";
-      link.href = "Style/blog.css";
-      document.head.appendChild(link);
-
-      // Load Blog JS
-      let script = document.createElement("script");
-      script.src = "Script/blog.js";
-      document.body.appendChild(script);
-    })
-    .catch((err) => console.error("Error preloading blog:", err));
-});
-
-// About us
-// Load About Us page
-// PRELOAD ABOUT US SECTION ON PAGE LOAD
-window.addEventListener("DOMContentLoaded", () => {
-  fetch("Pages/aboutUs.html")
-    .then((res) => res.text())
-    .then((data) => {
-      document.getElementById("aboutUs").innerHTML = data;
-
-      // Load About CSS
-      let link = document.createElement("link");
-      link.rel = "stylesheet";
-      link.href = "Style/aboutUs.css";
-      document.head.appendChild(link);
-
-      // Load About JS for animation
-      let script = document.createElement("script");
-      script.src = "Script/aboutUs.js";
-      document.body.appendChild(script);
-    })
-    .catch((err) => console.error("Error loading About Us:", err));
-});
-
-// Load contact.html inside index page
-window.addEventListener("DOMContentLoaded", () => {
-  fetch("Pages/contactUs.html")
-    .then((response) => response.text())
-    .then((data) => {
-      document.getElementById("contact-container").innerHTML = data;
-    });
 });

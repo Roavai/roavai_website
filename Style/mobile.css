@@ -106,23 +106,6 @@
   }
 }
 
-.hero-title {
-  text-align: center;
-  width: 100%;
-}
-
-.hero-meta {
-  display: flex;
-  justify-content: center;
-  gap: 20px;
-  margin-top: 15px;
-}
-
-.meta-line {
-  white-space: nowrap;
-  /* so text stays in one line */
-}
-
 /* ===== HERO MOBILE ===== */
 @media (max-width: 412px) {
   /* *{
@@ -144,7 +127,7 @@
   }
 
 
-  .hero-inner {
+  .heroInner {
     /* margin-left: 0;
     margin-right: 5cm;
     padding: 130px 16px;
@@ -157,48 +140,34 @@
   }
 
 
-  .hero-title {
-    left: 0;
-    right: 4cm;
-    margin-top: 2rem;
-    font-size: 3rem;
-    /* smaller heading */
-  }
-
-  .tag {
-    padding-right: 2cm;
-    font-size: 0.5rem;
-    padding-top: 1cm;
-  }
-
-  .hero-inner p {
-    left: 0;
-    font-size: 0.95rem;
-    margin-top: 40px;
-
-  }
-
-  .hero-meta {
-    margin-top: 0.8cm;
-    flex-wrap: wrap;
-    /* allow wrapping */
-    width: 100%;
-    padding-left: 0;
-    margin-left: -30px;
-    /* adjust value as needed */
-    justify-content: center;
+  .heroTitle {
+    position: relative;
+    width: 90%;
     text-align: center;
-
-
+    font-family: "Orbitron", sans-serif;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    font-size: 4rem;
+      /* smaller heading */
   }
 
-  .meta-line {
-    width: 100%;
-    margin: 5px 0;
-
+  .tag1 {
+    position: relative;
+    width: 90%;
+    text-align: center;
+    font-weight: 10;
+    font-size: 1.3rem;
+    margin-top: 0.1rem;
   }
 
-
+  .tag2 {
+    position: relative;
+    width: 90%;
+    text-align: center;
+    font-size: 1.3rem;
+    font-weight: 10;
+    margin-top: 1rem;
+  } 
 }
 
 /* ===== PRODUCT MOBILE ===== */
@@ -488,14 +457,22 @@
 
   .contact-form {
     width: 80%;
-    margin-left: 45px;
     padding-bottom: 2cm;
+    margin: 0 auto;
   }
 
   .submit-btn {
-    margin-left: 85px;
+    display: block;
+    margin: 0 auto;
     font-size: 15px;
   }
 
 
+}
+
+/* hide nav on small screens */
+@media (max-width:900px) {
+  .mainNav {
+    display: none
+  }
 }

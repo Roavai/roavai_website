@@ -3,60 +3,54 @@
 
 <head>
   <meta charset="utf-8" />
-  <!-- <meta name="viewport" content="width=device-width,initial-scale=1" /> -->
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Robotix — Hero</title>
-  <link
-    href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Poppins:wght@300;500;700&display=swap"
-    rel="stylesheet">
+  <title>ROAVAI</title>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="index.css" />
   <link rel="stylesheet" href="./Style/blog.css" />
   <link rel="stylesheet" href="./Style/contactUs.css" />
   <link rel="stylesheet" href="./Style/mobile.css">
+  <link rel="icon" type="image/png" href="Images/ROAVAI_ICON.png" />
 </head>
 
 <body id="top">
-  <!-- Header -->
-  <header class="site-header">
-    <button id="openMenu" class="icon-btn menu-btn" aria-label="Open menu">
-      <!-- simple hamburger -->
-      <!-- <svg width="24" height="24" viewBox="0 0 24 24" aria-hidden="true"><path fill="white" d="M3 6h18v2H3zM3 11h18v2H3zM3 16h18v2H3z"/></svg> -->
-    </button>
-
-
-    <nav class="main-nav">
+  <!-- HEADER -->
+  <header class="siteHeader">
+    
+    <!-- logo/title -->
+    <a href="#top" class="siteLogo" aria-label="ROAVAI home">
+      <span class="logoText">ROAVAI</span>
+    </a>
+    
+    <!-- NAVBAR -->
+    <nav class="mainNav">
       <ul>
         <li><a href="#top" id="navHome">Home</a></li>
         <li><a href="#product" id="navProduct">Product</a></li>
         <li><a href="#blog" id="loadBlog">Blog</a></li>
-        <!-- <li><a href="#blog" id="navBlog">Blogs</a></li> -->
-        <li><a href="#aboutUs" id="navAbout">About Us</a></li>
+        <li><a href="#aboutUs" id="navAbout">About</a></li>
+        <li><a href="#contactForm" id="navContact">Contact</a></li>
       </ul>
     </nav>
 
+    <!-- HAMBURGER -->
+    <button id="openMenu" class="openButton" aria-label="Open menu">☰</button>
+
   </header>
 
-  <!-- Side drawer -->
-  <aside id="sideDrawer" class="side-drawer" aria-hidden="true">
-    <button id="closeMenu" class="close-btn" aria-label="Close menu">&times;</button>
-    <!-- <div class="drawer-content">
-      <h2>Sign In</h2>
-      <ul class="drawer-links">
-        <li><a href="#">FAQs</a></li>
-        <li><a href="#">Media</a></li>
-        <li><a href="#">Dealership</a></li>
-      
-        
-      </ul>
-
-      <div class="contact">
-        <h3>Get in Touch</h3>
-        <p>email: contact@robotix.example</p>
-        <p>Phone: +91 98765 43210</p>
-        <p class="hours">(Mon - Sat: 9am - 7pm)</p>
-      </div> -->
-    </div>
+  <!-- SIDE DRAWER -->
+  <aside id="sideDrawer" class="drawer" >
+    <button id="closeMenu" class="closeButton" aria-label="Close menu">✖︎</button>
+      <nav class="drawerNav">
+        <ul>
+          <li><a href="#top" id="drawerNavHome">Home</a></li>
+          <li><a href="#product" id="drawerNavProduct">Product</a></li>
+          <li><a href="#blog" id="drawerLoadBlog">Blog</a></li>
+          <li><a href="#aboutUs" id="drawerNavAbout">About</a></li>
+          <li><a href="#contactForm" id="drawerNavContact">Contact</a></li>
+        </ul>
+      </nav>
   </aside>
 
   <div id="overlay" class="overlay" hidden></div>
@@ -65,41 +59,15 @@
   <main class="hero" role="main">
 
     <!-- Background Video -->
-    <video class="hero-video" autoplay muted loop playsinline>
+    <video class="heroVideo" autoplay muted loop playsinline>
       <source src="Videos/home1.mp4" type="video/mp4">
-      <!-- <source src="Images/Luna-removebg-preview.png" type="video/mp4"> -->
-
     </video>
 
-    <div class="hero-inner">
-      <h1 class="hero-title ">ROAVAI</h1>
-
-      <p class="tag">A Robot that Learns, Loves, and Lives with You</p>
-
-      <p>“Meet the next generation of intelligent companion pet robot that is intelligent, learns, plays, and bonds with
-        you.</p>
-
-
-      <!-- <div class="hero-meta">
-        <div class="meta-line"><strong>🧠 Learns You </strong>-– Recognises faces and voices..</div>
-        <div class="meta-line"><strong>❤️ Feels Alive </strong>-– Expressive eyes, gestures, and sounds.</div>
-        <div class="meta-line"><strong>⚡ Self-Charging </strong>-– Always full ready to play..</div>
-      </div> -->
-
-      <!-- About ROAVAI Section -->
-      <!-- <section class="about-roavai">
-        <div class="about-container">
-        <h2>About ROAVAI</h2>
-        <p>
-          ROAVAI is a next-generation robot pet designed to bring joy, comfort, and interaction into your daily life.
-          It doesn’t just respond — it learns, adapts, and connects with you over time.
-        </p>
-        <p>
-          Whether you live in an apartment, can’t own a real pet, or simply want a fun companion —
-          <strong>ROAVAI</strong> gives you the love and energy of a pet, powered by safe AI.
-        </p>
-        </div>
-      </section> -->
+    <div class="heroInner">
+      <h1 class="heroTitle">ROAVAI</h1>
+      <p class="tag1">A Robot that Learns, plays, and Lives with You</p>
+      <p class="tag2">* * *</p>
+      <p class="tag2">Witness the building of the future where robots will be friend with humans and will make our life easier in every possible way.</p>
     </div>
 
   </main>
@@ -115,9 +83,7 @@
 
 
   <!-- Contact Us section-->
-
   <h1 class="title">Contact Us</h1>
-
   <form id="contactForm" class="contact-form">
 
     <div class="row">

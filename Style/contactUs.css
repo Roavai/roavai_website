@@ -6,7 +6,7 @@
 
 /* Title */
 .title {
-  justify-content: center;
+  position: relative;
   text-align: center;
   font-size: 48px;
   font-weight: bold;
@@ -15,25 +15,32 @@
 
 /* Form */
 .contact-form {
-
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   width: 60%;
-  margin-top: 20px;
-  margin-left: 350px;
+  margin: 20px auto 0;
   padding-bottom: 2cm;
-
 }
 
 /* Row fields */
 .row {
+  position: relative;
   display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
   gap: 20px;
   margin-bottom: 20px;
+  width: 100%;
 }
 
 /* Input + textarea styling */
 input,
 textarea {
-
   background: #0d0d0d;
   border: none;
   color: white;
@@ -51,7 +58,6 @@ textarea {
 
 /* Submit button */
 .submit-btn {
-  margin-left: 9.5cm;
   background: #e60000;
   color: white;
   border: none;

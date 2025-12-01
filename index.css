@@ -178,6 +178,61 @@ padding: 10px 10px;
   text-shadow: 0 0 10px rgba(0, 255, 255, 0.8), 0 0 20px rgba(0, 255, 255, 0.5);
 }
 
+
+/* Hamburger styling  */
+.drawerNav ul li {
+  transition: transform 0.25s ease, background 0.25s ease;
+}
+
+.drawerNav ul li:hover {
+  transform: translateX(-6px); /* move slightly left */
+  background: rgba(255,255,255,0.12);
+  border-radius: 8px;
+}
+
+.drawerNav a {
+  display: block;
+  padding: 12px 20px;
+  color: rgba(255,255,255,0.85);
+  text-decoration: none;
+}
+
+.drawerNav a:hover {
+  color: #fff;
+}
+
+/* Mobile Number */
+.drawerContact {
+  margin-top: 20px;
+  text-align: left;
+  color: rgba(255,255,255,0.85);
+  font-size: 0.9rem;
+  padding-left: 20px;
+}
+
+/* Social Icons */
+.drawerSocial {
+  display: flex;
+  gap: 14px;
+  margin-top: 12px;
+  padding-left: 20px;
+}
+
+.drawerSocial img {
+  width: 25px;
+  height: 26px;
+  opacity: 0.85;
+  transition: opacity 0.25s ease, transform 0.2s ease;
+}
+
+.drawerSocial img:hover {
+  opacity: 1;
+  transform: scale(1.15);
+}
+
+
+/* ------------------------------------------------------------------------- */
+
 /* overlay when drawer open */
 .overlay {
   position: fixed;

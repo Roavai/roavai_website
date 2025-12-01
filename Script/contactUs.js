@@ -1,26 +1,27 @@
-function initContactUs() {
-  document.getElementById("contactForm").addEventListener("submit", async (e) => {
-    e.preventDefault();
+// contact.js  ← this is the script you load in HTML
+document.getElementById("contactForm").addEventListener("submit", async (e) => {
+  e.preventDefault();
 
-    const data = {
-      name: document.getElementById("name").value,
-      email: document.getElementById("email").value,
-      message: document.getElementById("message").value,
-    };
+  const name = document.getElementById("name").value.trim();
+  const email = document.getElementById("email").value.trim();
+  const message = document.getElementById("message").value.trim();
 
-    const response = await fetch("http://localhost:5000/save", {
+  try {
+    const res = await fetch("/api/contact", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(data),
+      body: JSON.stringify({ name, email, message }),
     });
 
-    const result = await response.json();
-    alert(result.message);
-  });
-}
+    const data = await res.json();
 
-if (document.readyState === 'loading') {
-  document.addEventListener('DOMContentLoaded', initContactUs);
-} else {
-  initContactUs();
-}
+    if (res.ok) {
+      alert("Thank you! Your message was sent.");
+      e.target.reset();
+    } else {
+      alert("Error: " + (data.error || "Try again"));
+    }
+  } catch (err) {
+    alert("Network error. Please try again.");
+  }
+});

@@ -28,23 +28,23 @@ document.addEventListener("keydown", (e) => {
 
 // Smooth scroll
 document.addEventListener("DOMContentLoaded", () => {
-const links = document.querySelectorAll(".navHome");
-links.forEach((link) => {
-  link.addEventListener("click", (e) => {
-    e.preventDefault();
-    const targetId = link.getAttribute("href").substring(1);
-    const targetSection = document.getElementById(targetId);
-    if (targetSection) {
-      targetSection.scrollIntoView({
-        behavior: "smooth",
-        block: "start",
-      });
-    }
-    if (sideDrawer.classList.contains("open")) {
-      closeDrawer();
-    }
+  const links = document.querySelectorAll(".navHome");
+  links.forEach((link) => {
+    link.addEventListener("click", (e) => {
+      e.preventDefault();
+      const targetId = link.getAttribute("href").substring(1);
+      const targetSection = document.getElementById(targetId);
+      if (targetSection) {
+        targetSection.scrollIntoView({
+          behavior: "smooth",
+          block: "start",
+        });
+      }
+      if (sideDrawer.classList.contains("open")) {
+        closeDrawer();
+      }
+    });
   });
-});
 
   /**
    * Dynamically loads a section's HTML, CSS, and JS.
@@ -54,8 +54,10 @@ links.forEach((link) => {
    * @param {boolean} hasJs - Whether to load a corresponding JS file.
    */
   const loadSection = (name, containerId, hasCss = false, hasJs = false) => {
-    fetch(`Pages/${name}.html`)
-      .then((res) => (res.ok ? res.text() : Promise.reject(`Failed to load ${name}.html`)))
+    fetch(`View/${name}.html`)
+      .then((res) =>
+        res.ok ? res.text() : Promise.reject(`Failed to load ${name}.html`)
+      )
       .then((data) => {
         document.getElementById(containerId).innerHTML = data;
 

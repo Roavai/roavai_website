@@ -4,76 +4,92 @@
   overflow: hidden;
 }
 
-/* ░ FIXED TITLE ABOVE EVERYTHING ░ */
+.aboutUs {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 .about-title {
-  position: absolute;
-  top: 8%;
-  left: 50%;
-  transform: translateX(-50%);
-  z-index: 5;
-  color: white;
-  font-size: 5.4rem;
-  font-weight: 600;
+  font-size: 3rem;
+  padding-top: 100px;
+  padding-bottom: 20px;
+  margin: 20px 0;
+  color: var(--text-dark);
+  z-index: 10;
+}
+
+.about-description {
+  padding: 0 50px;
   text-align: center;
-  pointer-events: none;
-  font-style: oblique;
+  color: var(--text-dark);
+  z-index: 10;
 }
 
-/* 🔹 Video fixed */
-.about-video {
-  position: absolute;
-  top: 0;
-  /* left: 90px; */
-  width: 100%;
-  height: 90%;
-  object-fit: cover;
-  filter: blur(4px);
-  transform: scale(1.1);
-  /* slight zoom so edges don’t show */
-}
-
-/* 🔹 Independent scroll box */
-.about-scroll-box {
+.aboutus-image {
   position: absolute;
   top: 0;
   left: 0;
-  height: 100vh;
   width: 100%;
-  overflow-y: scroll;
-  /* user scrolls only this */
-  scrollbar-width: none;
-}
-
-.about-scroll-box::-webkit-scrollbar {
-  display: none;
-}
-
-/* 🔹 Text centered */
-.about-reveal-text {
-  position: sticky;
-
-  top: 70%;
-  bottom: 10%;
-  transform: translateY(-180%);
-  text-align: center;
-  font-size: 4.6rem;
-  font-weight: 500;
-  color: white;
+  height: 100%;
+  object-fit: cover;
+  z-index: 1;
   opacity: 1;
-  transition: opacity .40s, transform .40s;
-  line-height: 1.5;
-  font-style: italic;
 }
 
-/* hidden state */
-.about-reveal-text.fade {
-  opacity: 0;
-  transform: translateY(-20%);
+.explore-button {
+    position: center;
+    align-items: center;
+    justify-content: center;
+    width: 200px;
+    height: 50px;
+    font-size: 1.2rem;
+    overflow: hidden; 
+    transition: color 0.3s ease-in-out; 
+    border: none; 
+    border-top: 1px solid #ffffff; /* Top line */
+    border-bottom: 1px solid #ffffff; /* Bottom line */
+    color: #ffffff;
+    background-color: transparent;
+    z-index: 10;
 }
 
-.about-scroll-box::after {
-  content: "";
-  display: block;
-  height: 260vh;
-  /* controls how long the user scrolls */
+/* Span wrapper ensures text sits above the filling background */
+.explore-button span {
+    position: relative;
+    z-index: 20; 
+    display: inline-block;
+}
+
+.explore-button span:hover {
+  color: #000;
+  cursor: pointer;    
+}
+
+.explore-button {
+    position: relative;
+    overflow: hidden; /* Ensures the fill doesn't show outside the button */
+    z-index: 1;
+    transition: color 0.4s; /* Smooth text color change */
+}
+
+/* Create the sliding white box */
+.explore-button::before {
+    content: '';
+    position: absolute;
+    top: 100%; /* Start completely hidden at the bottom */
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #ffffff;
+    transition: top 0.4s; /* Controls the slide speed */
+    z-index: -1; /* Puts it behind the text */
+}
+
+.explore-button:hover {
+    color: var(--text-dark);
+}
+
+.explore-button:hover::before {
+    top: 0; /* slide up to cover the button */
 }

@@ -121,7 +121,7 @@ padding: 10px 10px;
   right: 0;
   top: 0;
   height: 100vh;
-  width: 250px;
+  width: 300px;
   background: linear-gradient(to bottom, rgba(10, 10, 10, 0.35) 0%, rgba(10, 10, 10, 0.08) 100%);
   backdrop-filter: blur(4px);
   padding-top: 20px;
@@ -205,7 +205,7 @@ padding: 10px 10px;
 .drawerContact {
   margin-top: 20px;
   text-align: left;
-  color: rgba(255,255,255,0.85);
+  color: rgba(255,255,255,0.75);
   font-size: 0.9rem;
   padding-left: 20px;
 }
@@ -213,16 +213,21 @@ padding: 10px 10px;
 /* Social Icons */
 .drawerSocial {
   display: flex;
-  gap: 14px;
+  justify-content: space-evenly;
+  align-content: center;
+  align-items: center;
+  gap: 30px;
+  padding: 10px 10px;
   margin-top: 12px;
-  padding-left: 20px;
-}
+  background-color: #ffffff4c;
+  border-radius: 25px;
+  width: 100%;}
 
 .drawerSocial img {
-  width: 25px;
-  height: 26px;
-  opacity: 0.85;
-  transition: opacity 0.25s ease, transform 0.2s ease;
+  width: 30px;
+  height: 30px;
+  object-fit: contain;
+  object-position: center;
 }
 
 .drawerSocial img:hover {
@@ -350,3 +355,6 @@ padding: 10px 10px;
   min-height: 100vh;
   width: 100%;
 }
+
+
+

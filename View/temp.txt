@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - Custom Design</title>
+    <!-- Load Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- CSS Styles from aboutUs.css are placed here, inside <style> tags -->
+    <style>
+        /* Custom font for a modern feel, similar to Inter */
+        html {
+            font-family: 'Inter', sans-serif;
+            scroll-behavior: smooth;
+        }
+
+        /* --- Custom Button Style: Two Lines and Dynamic Fill ---
+           This is the core CSS logic you would place in aboutUs.css 
+        */
+        .explore-button {
+            position: relative;
+            overflow: hidden; 
+            transition: color 0.3s ease-in-out; 
+            border: none; 
+            border-top: 1px solid #ffffff; /* Top line */
+            border-bottom: 1px solid #ffffff; /* Bottom line */
+            color: #ffffff;
+            background-color: transparent;
+            z-index: 10;
+        }
+
+        /* Span wrapper ensures text sits above the filling background */
+        .explore-button span {
+            position: relative;
+            z-index: 20; 
+            display: inline-block;
+        }
+
+        /* The filling background (::before) for the "lightning" effect */
+        .explore-button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: #ffffff; /* White fill color */
+            /* Start the fill element off-screen to the left */
+            transform: translateX(-100%); 
+            transition: transform 0.3s ease-out; /* Fast slide transition */
+            z-index: 1;
+        }
+        
+        /* Hover/Focus State: Slide in the white background and change text color to dark */
+        .explore-button:hover,
+        .explore-button:focus {
+            color: #1a1a1a; /* Dark text over white background */
+            outline: none; 
+        }
+
+        .explore-button:hover::before,
+        .explore-button:focus::before {
+            transform: translateX(0%); /* Slide the white fill fully into view */
+        }
+
+        /* When the button is actively clicked */
+        .explore-button:active::before {
+             background-color: #e5e5e5; 
+        }
+    </style>
+</head>
+<body class="bg-gray-900 text-white min-h-screen">
+
+    <!-- HTML Structure starts here -->
+    <!-- Header (Simple Nav Bar) -->
+    <header class="p-6">
+        <nav class="flex justify-between items-center max-w-7xl mx-auto">
+            <div class="text-xl font-bold tracking-widest uppercase">ROAVAI</div>
+            <div class="hidden sm:block">
+                <a href="#" class="mx-3 text-sm opacity-70 hover:opacity-100 transition">Home</a>
+                <a href="#" class="mx-3 text-sm font-bold border-b-2 border-white pb-1">About Us</a>
+                <a href="#" class="mx-3 text-sm opacity-70 hover:opacity-100 transition">Technology</a>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Main Content Area: About Us Section (Full Width, Centered Content) -->
+    <main class="max-w-4xl mx-auto py-12 md:py-24 px-6 text-center">
+        
+        <!-- Primary Content Block - Center Aligned -->
+        <section class="space-y-6">
+            <!-- Main Title/Heading Area -->
+            <h1 class="text-4xl sm:text-6xl font-extrabold leading-tight text-white">
+                <!-- Retaining only the 'About Us' small header -->
+                <span class="text-gray-400 block text-lg font-medium mb-2 uppercase tracking-widest">About Us</span>
+            </h1>
+
+            <!-- Body text - descriptive paragraph (Centered via mx-auto) -->
+            <p class="text-lg text-gray-300 max-w-2xl mx-auto">
+                We build foundational robotics technology that transforms robots from machines into living companions — intelligent, expressive, and human-like.<br>Welcome to ROAVAI — this is our story.
+            </p>
+
+            <!-- The "Explore" Button (Two-line initial state) -->
+            <button
+                class="explore-button
+                       mt-10
+                       px-8 py-3
+                       rounded-md
+                       uppercase text-sm font-semibold
+                       focus:ring-4 focus:ring-white focus:ring-opacity-50"
+            >
+                <!-- Text wrapper for z-index control -->
+                <span>Explore</span>
+            </button>
+
+            <!-- Message Box for Feedback (Centered via text-center on parent) -->
+            <div id="message-box" class="mt-4 text-sm font-medium text-green-400 transition-opacity duration-300 opacity-0 h-0"></div>
+        </section>
+
+    </main>
+    <!-- End of HTML Structure -->
+
+    <!-- JavaScript Logic from aboutUs.js is placed here, inside <script> tags -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const button = document.querySelector('.explore-button');
+            const messageBox = document.getElementById('message-box');
+
+            button.addEventListener('click', () => {
+                // Show a custom message instead of an alert
+                messageBox.textContent = 'Navigating to detailed history page...';
+                messageBox.classList.remove('h-0', 'opacity-0');
+                messageBox.classList.add('h-auto', 'opacity-100');
+
+                console.log('Explore button clicked. Simulating navigation.');
+
+                // Hide the message after 3 seconds
+                setTimeout(() => {
+                    messageBox.classList.remove('opacity-100');
+                    messageBox.classList.add('opacity-0');
+                    // Wait for fade-out, then collapse element
+                    setTimeout(() => {
+                         messageBox.classList.add('h-0');
+                         messageBox.textContent = '';
+                    }, 300);
+                }, 3000);
+            });
+        });
+    </script>
+</body>
+</html>

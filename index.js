@@ -46,6 +46,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
+  
   /**
    * Dynamically loads a section's HTML, CSS, and JS.
    * @param {string} name - The name of the section (e.g., 'product', 'blog').
@@ -95,3 +96,19 @@ window.addEventListener("load", () => {
     }
   }
 });
+
+// ---------------------------------------------------------------------------
+
+// Scroll Reveal Animation
+const revealSections = document.querySelectorAll('.reveal-section');
+
+const revealObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if(entry.isIntersecting){
+      entry.target.classList.add('visible');
+    }
+  });
+}, { threshold: 0.25 });
+
+revealSections.forEach(section => revealObserver.observe(section));
+

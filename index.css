@@ -333,6 +333,10 @@ padding: 10px 10px;
   font-weight: 100;
 
 }
+
+.tag3{
+      display: none;
+  }
 /* 
 .mainNav a:hover {
 background: rgba(86, 86, 86, 0.353);
@@ -352,7 +356,6 @@ padding: 10px 10px;
   font-weight: 300;
   margin-top: 38rem;
   padding: 10px 10px;
-
 }
 
 .tag2 span{

@@ -139,35 +139,48 @@
     text-align: center;
   }
 
+  
+.logoText {
+        position: relative;
+      text-align: center;
+  font-family: 'Orbitron', sans-serif;
+  font-size: 28px;
+  font-weight: 700;
+  color: #fff;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  transition: text-shadow 0.3s ease;
+}
 
-  .heroTitle {
-    position: relative;
-    width: 90%;
-    text-align: center;
-    font-family: "Orbitron", sans-serif;
-    margin-top: 2rem;
-    margin-bottom: 2rem;
-    font-size: 4rem;
-      /* smaller heading */
-  }
-
-  .tag1 {
-    position: relative;
-    width: 90%;
-    text-align: center;
-    font-weight: 10;
-    font-size: 1.3rem;
-    margin-top: 0.1rem;
-  }
-
+ 
   .tag2 {
+  position: relative;
+  width: 100%;
+  text-align: center;
+  font-size: 1.1rem;
+  opacity: 0.95;
+  font-weight: 300;
+  margin-top: 20rem;
+  padding-bottom: 5cm;
+
+}
+.tag3 {
+    display: block !important;
+    font-family: "Orbitron", sans-serif;
+    letter-spacing: 2px;
     position: relative;
-    width: 90%;
+    width: 85%;
+    margin: 1rem;
     text-align: center;
-    font-size: 1.3rem;
-    font-weight: 10;
-    margin-top: 1rem;
-  } 
+    font-size: 0.7rem;
+    font-weight: 100;
+    color: #ffffff;
+    padding-top: 1.5cm;
+    /* margin-top: 20rem; */
+    margin-bottom: 15rem;
+    /* padding: 10px 14px; */
+}
+
 }
 
 /* ===== PRODUCT MOBILE ===== */
@@ -475,4 +488,7 @@
   .mainNav {
     display: none
   }
+  .tag1 {
+    display: none
+  } 
 }

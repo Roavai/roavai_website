@@ -1,4 +1,4 @@
-html {
+  html {
   scroll-behavior: smooth;
 }
 
@@ -403,3 +403,20 @@ padding: 10px 10px;
 
 
 
+/* ---- Smooth Scroll Reveal Animation ---- */
+.reveal-section {
+  opacity: 0;
+  transform: scale(0.96) translateY(30px);
+  transition: opacity 0.9s ease-out, transform 1s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: transform, opacity;
+}
+
+.reveal-section.visible {
+  opacity: 1;
+  transform: scale(1) translateY(0);
+}
+
+/* Optional: slight parallax movement */
+.reveal-section.parallax {
+  transition: transform 1.5s ease-out;
+}

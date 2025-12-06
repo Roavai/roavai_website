@@ -1,140 +1,114 @@
-<section class="product-section" id="product">
-  <div class="product-left">
-    <div class="product-content">
-      <h2>How it will Work </h2>
-      <p>Take your first step towards <strong>ROAVAI One.</strong></p>
+<div class="slider-container">
 
-      <div class="product-stats">
+  <!-- GLOBAL PERSISTENT MENU (Moved outside slides) -->
+  <div class="menu-wrapper">
+    <div class="menu-container">
+      <h1 class="menu-heading">Features</h1>
 
-        <div class="stat">
-          <h3>1️⃣ Recognition</h3>
-          <span>ROAVAI recognises family members by face and voice — it knows
-            who you are and greets you differently each time.
-            ho you are and greets you</span>
-
-        </div>
-
-        <div class="stat">
-          <h3>2️⃣ Learning</h3>
-          <span>It learns through play and rewards — bones make
-            it happy, balls excite it, and sticks mean “not good.”
-            ho you are and greets you</span>
-
-        </div>
-
-
-        <div class="stat">
-          <h3>3️⃣ Bonding</h3>
-          <span>Over time, it develops its own personality, remembers routines, and reacts with emotion
-            becoming your personal, always-there companion.</span>
-
-        </div>
-
+      <div class="feature-link" id="link-1">
+        🧠 Offline Smart AI
       </div>
 
-      <p class="product-description">
-        Robotics One is a complex mecha-biology of <strong>passionately designed</strong> and engineered elements.
-        Every motion and sound is deeply inspired by the life we experience, representing a fusion of human curiosity
-        and precision robotics.
-      </p>
+      <div class="feature-link" id="link-2">
+        👁️ Camera & Vision
+      </div>
+
+      <div class="feature-link" id="link-3">
+        🎤 Voice Recognition
+      </div>
+
+      <div class="feature-link" id="link-4">
+        🐕 Expressive Motion
+      </div>
+
+      <div class="feature-link" id="link-5">
+        ⚡ Auto-Charging Dock
+      </div>
+
+      <div class="feature-link" id="link-6">
+        🗺️ Home Mapping
+      </div>
     </div>
   </div>
 
-  <div class="product-right"></div>
-</section>
-
-
-<!--   Feature section -->
-
-<section class="features-section">
-  <h2 class="features-heading">Why Choose ROAVAI</h2>
-
-  <div class="features-wrapper">
-
-    <!-- LEFT SIDE MENU -->
-    <div class="features-list">
-      <div class="feature-item active" data-video="offline.mp4">🧠 Offline Smart AI
-        <div class="feature-subtext">
-          <p> Works entirely without internet</p>
-        </div>
-      </div>
-      <div class="feature-item" data-video="vision.mp4">👁️ Camera & Vision
-        <div class="feature-subtext">
-          <p> Detects people, gestures, and objects around it</p>
-        </div>
-      </div>
-      <div class="feature-item" data-video="voice.mp4">🎤 Voice Recognition
-        <div class="feature-subtext">
-          <p>Understands simple commands and family voices. </p>
-        </div>
-      </div>
-      <div class="feature-item" data-video="emotion.mp4">🐕 Expressive Motion
-        <div class="feature-subtext">
-          <p>Realistic body language, tail wags, head tilts, and reactions.</p>
-        </div>
-      </div>
-      <div class="feature-item" data-video="charging.mp4">⚡ Auto-Charging Dock
-        <div class="feature-subtext">
-          <p> Returns to its dock automatically when low on power.</p>
-        </div>
-      </div>
-      <div class="feature-item" data-video="home.mp4">🗺️ Home Mapping
-        <div class="feature-subtext">
-          <p> Learns boundaries and moves safely within your home. </p>
-        </div>
-      </div>
+  <!-- SLIDE 0: MAIN MENU PREVIEW (Initially Active) -->
+  <div class="slide active" id="slide-menu" data-slide-index="0">
+    <!-- 3D Container for Menu -->
+    <div class="canvas-container" id="canvas-0">
+      <div class="loader">Loading ROAVAI...</div>
     </div>
-
-    <!-- RIGHT SIDE VIDEO -->
-    <div class="feature-video-area">
-
-      <div id="videoSubtitle"></div> <!-- ⭐ TEXT WILL APPEAR HERE -->
-
-      <video id="featureVideo" autoplay muted loop playsinline>
-        <source src="Videos/offline.mp4" type="video/mp4">
-      </video>
-    </div>
-
+    <!-- Menu wrapper is now global above -->
   </div>
-</section>
 
-
-
-<!-- <section class="features-section">
-  <h2 class="features-heading">Why Choose ROAVAI</h2>
-
-  <div class="features-container">
-
-    <div class="feature-box">
-      <h3>🧠 *Offline Smart AI*</h3>
-      <p> Works entirely without internet</p>
+  <!-- SLIDE 1: OFFLINE AI -->
+  <div class="slide" data-slide-index="1">
+    <!-- Removed Back Button -->
+    <div class="canvas-container" id="canvas-1">
+      <div class="loader">Loading Model...</div>
+      <div class="content">
+        <h1>Offline Smart AI</h1>
+        <p>Privacy first. Our AI processes everything locally on the device, ensuring your data never leaves your home.
+          No
+          internet connection required for core functions.</p>
+      </div>
     </div>
-
-    <div class="feature-box">
-      <h3>👁️ *Camera & Vision*</h3>
-      <p>Detects people, gestures, and objects around it. </p>
-    </div>
-
-    <div class="feature-box">
-      <h3>🎤 *Voice Recognition*</h3>
-      <p>Understands simple commands and family voices. </p>
-    </div>
-
-    <div class="feature-box">
-      <h3>🐕 *Expressive Motion*</h3>
-      <p>Realistic body language, tail wags, head tilts, and reactions.</p>
-    </div>
-
-    <div class="feature-box">
-      <h3>⚡*Auto-Charging Dock* </h3>
-      <p>Returns to its dock automatically when low on power.  </p>
-    </div>
-
-    <div class="feature-box">
-      <h3>🗺️ *Home Mapping* </h3>
-      <p> Learns boundaries and moves safely within your home.  </p>
-    </div>
-
   </div>
-</section>
- -->
+
+  <!-- SLIDE 2: CAMERA & VISION -->
+  <div class="slide" data-slide-index="2">
+    <div class="canvas-container" id="canvas-2">
+      <div class="content">
+        <h1>Camera & Vision</h1>
+        <p>Advanced computer vision allows ROAVAI to detect people, recognize gestures, and identify objects with
+          incredible precision.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- SLIDE 3: VOICE RECOGNITION -->
+  <div class="slide" data-slide-index="3">
+    <div class="canvas-container" id="canvas-3">
+      <div class="content">
+        <h1>Voice Recognition</h1>
+        <p>Speak naturally. ROAVAI learns your voice and responds to commands instantly, creating a seamless bond
+          between
+          you and the machine.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- SLIDE 4: EXPRESSIVE MOTION -->
+  <div class="slide" data-slide-index="4">
+    <div class="canvas-container" id="canvas-4">
+      <div class="content">
+        <h1>Expressive Motion</h1>
+        <p>More than a robot. With realistic body language, tail wags, and head tilts, ROAVAI expresses emotion just
+          like
+          a loyal companion.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- SLIDE 5: AUTO CHARGING -->
+  <div class="slide" data-slide-index="5">
+    <div class="canvas-container" id="canvas-5">
+      <div class="content">
+        <h1>Auto-Charging Dock</h1>
+        <p>Set it and forget it. When power runs low, ROAVAI autonomously navigates back to its station to recharge.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- SLIDE 6: HOME MAPPING -->
+  <div class="slide" data-slide-index="6">
+    <div class="canvas-container" id="canvas-6">
+      <div class="content">
+        <h1>Home Mapping</h1>
+        <p>Smart navigation systems map your home in real-time, learning boundaries and avoiding obstacles to move
+          safely.
+        </p>
+      </div>
+    </div>
+  </div>
+
+</div>

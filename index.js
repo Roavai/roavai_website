@@ -46,15 +46,16 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
-  
+
   /**
    * Dynamically loads a section's HTML, CSS, and JS.
    * @param {string} name - The name of the section (e.g., 'product', 'blog').
    * @param {string} containerId - The ID of the element to inject HTML into.
    * @param {boolean} hasCss - Whether to load a corresponding CSS file.
    * @param {boolean} hasJs - Whether to load a corresponding JS file.
+   * @param {boolean} isModule - Whether the JS file is a module.
    */
-  const loadSection = (name, containerId, hasCss = false, hasJs = false) => {
+  const loadSection = (name, containerId, hasCss = false, hasJs = false, isModule = false) => {
     fetch(`View/${name}.html`)
       .then((res) =>
         res.ok ? res.text() : Promise.reject(`Failed to load ${name}.html`)
@@ -72,6 +73,7 @@ document.addEventListener("DOMContentLoaded", () => {
         if (hasJs) {
           const script = document.createElement("script");
           script.src = `Script/${name}.js`;
+          if (isModule) script.type = "module";
           document.body.appendChild(script);
         }
       })
@@ -79,7 +81,7 @@ document.addEventListener("DOMContentLoaded", () => {
   };
 
   // Preload all dynamic sections
-  loadSection("product", "product", true, true);
+  loadSection("product", "product", true, true, true);
   loadSection("blog", "blog", true, true);
   loadSection("aboutUs", "aboutUs", true, true);
 });
@@ -104,7 +106,7 @@ const revealSections = document.querySelectorAll('.reveal-section');
 
 const revealObserver = new IntersectionObserver((entries) => {
   entries.forEach(entry => {
-    if(entry.isIntersecting){
+    if (entry.isIntersecting) {
       entry.target.classList.add('visible');
     }
   });

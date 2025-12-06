@@ -1,232 +1,261 @@
-/* Center entire product block */
-.product-content {
-  text-align: center;
+/* --- BASIC SETUP --- */
+.product-section {
+  position: relative;
   width: 100%;
-  max-width: 1200px;
-  margin: 0 auto;
-  padding-top: 70px;
-  /* same height as your navbar */
-}
-
-/* Center H2 */
-.product-content h2 {
-  font-size: 2.5rem;
-  margin-bottom: 30px;
-}
-
-/* Arrange all stats in horizontal row */
-.product-stats {
-  display: flex;
-  justify-content: center;
-  /* center the row */
-  align-items: flex-start;
-  gap: 40px;
-  /* space between 3 blocks */
-  margin: 30px auto;
-  width: 100%;
-}
-
-/* Each stat box */
-.stat {
-  background: rgba(255, 255, 255, 0.05);
-  padding: 20px;
-  border-radius: 10px;
-
-  width: 30%;
-  /* all three equal width */
-  min-width: 250px;
-  /* prevents shrinking */
-  text-align: center;
-}
-
-/* H3 styling */
-.stat h3 {
-  font-size: 1.4rem;
-  margin-bottom: 10px;
-  font-weight: 600;
-}
-
-/* Span (description) centered */
-
-
-/*===========================
-   FEATURES DESKTOP LAYOUT
-===========================*/
-.features-section {
-  padding: 60px;
-  background: #000;
+  height: 100vh;
+  overflow: hidden;
+  background-color: #050505;
   color: white;
 }
 
-.features-heading {
-  text-align: center;
-  font-size: 2.6rem;
-  margin-bottom: 50px;
+/* --- SLIDE CONTAINER --- */
+.slider-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
 }
 
-.features-wrapper {
+/* --- INDIVIDUAL SLIDES --- */
+.slide {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  z-index: 1;
+  visibility: hidden;
+  background: #000;
+}
+
+.slide.active {
+  visibility: visible;
+  z-index: 5;
+}
+
+.slide.next {
+  visibility: visible;
+  z-index: 10;
+  width: 0%;
+  height: 0%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  transition: width 1.2s cubic-bezier(0.77, 0, 0.175, 1),
+    height 1.2s cubic-bezier(0.77, 0, 0.175, 1);
+  overflow: hidden;
+}
+
+.slide.next.expanding {
+  width: 100%;
+  height: 100%;
+}
+
+/* --- 3D CONTAINER --- */
+/* --- 3D / VIDEO CONTAINER (FLOATING WINDOW) --- */
+.canvas-container {
+  position: absolute;
+  width: 55vw;
+  height: 70vh;
+  /* max-width: 900px; */
+  right: 5%;
+  top: 50%;
+  transform: translateY(-50%);
+  /* Only translate Y, right is fixed */
+  z-index: 1;
+
+  /* Floating Window Styling */
+  border-radius: 30px;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+  overflow: hidden;
+  /* Clips the video/3D content */
+
+  background: radial-gradient(circle at center, #222 0%, #000 100%);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* --- MENU STYLES (GLOBAL) --- */
+.menu-wrapper {
+  position: absolute;
+  top: 0;
+  left: 5%;
+  /* Align to left edge similar to right edge */
+  width: 35%;
+  /* Fixed width for the menu column */
+  height: 100%;
+  z-index: 30;
+  display: flex;
+  align-items: center;
+  /* Vertically centered */
+  /* padding-left: 10%; Removed to rely on left/width */
+  pointer-events: none;
+}
+
+.menu-container {
+  text-align: left;
+  width: 100%;
+  pointer-events: auto;
+}
+
+.menu-heading {
+  font-size: 3rem;
+  text-transform: uppercase;
+  letter-spacing: 5px;
+  margin-bottom: 40px;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeIn 1s ease forwards 0.5s;
+  color: white;
+}
+
+.feature-link {
+  font-size: 1.5rem;
+  cursor: pointer;
+  padding: 15px 0;
+  /* Border removed */
+  transition: all 0.3s ease;
+  opacity: 0;
+  transform: translateX(-20px);
   display: flex;
   justify-content: space-between;
-  align-items: flex-start;
-  gap: 40px;
-  width: 100%;
-  max-width: 1300px;
-  margin: 0 auto;
+  align-items: center;
+  color: rgba(255, 255, 255, 0.6);
 }
 
-/* LEFT SIDE LIST */
-.features-list {
-  /* margin-top: 2cm; */
-  padding-left: 2cm;
-  width: 30%;
-  display: flex;
-  flex-direction: column;
-  gap: 25px;
-}
-
-/* .features-list .feature-subtext {
-    display: none !important;
-} */
-
-.feature-item {
-  /* font-size: 1.5rem;
-  opacity: 0.9;
-  cursor: pointer;
-  transition: 0.3s; */
-
-  background: #111;
-  padding: 18px 20px;
-  border-radius: 12px;
-  font-size: 1rem;
-  cursor: pointer;
-  position: relative;
-  transition: background 0.3s ease, transform 0.3s ease;
-}
-
-
-.feature-item:hover,
-.feature-item.active {
-  opacity: 1;
-  background: #1c1c1c;
-  transform: translateX(8px);
-
-}
-
-/* RIGHT SIDE VIDEO */
-.feature-video-area {
-  /* width: 70%; */
-
-  position: relative;
-  width: 100%;
-  max-width: 900px;
-}
-
-/* #videoSubtitle {
-  position: absolute;
-  top: 20px;
-  left: 20px;
-
-  background: rgba(0, 0, 0, 0.5);
-  padding: 10px 16px;
-  border-radius: 8px;
-  color: white;
-
-  font-size: 1.1rem;
-  font-weight: 600;
-
-  pointer-events: none;
-  opacity: 0;
-  transition: opacity 0.3s ease;
-} */
-
-
-/* ---------------------- */
-/* Hidden by default      */
-/* ---------------------- */
-.feature-subtext {
-  max-height: 0;
-  overflow: hidden;
-  opacity: 0;
-  padding: 0 5px;
-  color: #cfcfcf;
-  font-size: 0.8rem;
-  line-height: 1.5;
-  transition:
-    max-height 0.35s ease,
-    opacity 0.25s ease;
-}
-
-/* ---------------------- */
-/* On hover → Expand text */
-/* ---------------------- */
-.feature-item:hover .feature-subtext {
-  max-height: 200px;
-  opacity: 1;
-  margin-top: 10px;
-}
-
-.feature-video-area video {
-  width: 100%;
-  height: 600px;
-  object-fit: cover;
-  /* border-radius: 16px; */
-  border-radius: 15px;
-
-}
-
-.feature-item.open .feature-subtext {
-  max-height: 200px;
-  opacity: 1;
-  margin-top: 10px;
-}
-
-.feature-item:not(.open) .feature-subtext {
-  max-height: 0;
-  opacity: 0;
-}
-
-
-/* .features-section {
-  padding: 60px 20px;
-  text-align: center;
-  margin-top: -2cm
-}
-
-.features-heading {
-  font-size: 2.2rem;
-  margin-bottom: 40px;
-  font-weight: bold;
-}
-
-.features-container {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 25px;
-  max-width: 1200px;
-  margin: 0 auto;
-}
-
-.feature-box {
-  background: #111;
+.feature-link:hover {
   color: #fff;
-  padding: 30px 20px;
-  border-radius: 14px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
-  transition: transform 0.3s ease;
+  padding-left: 20px;
 }
 
-.feature-box:hover {
-  transform: translateY(-6px);
+
+
+/* --- BOTTOM CENTER TEXT CONTENT --- */
+/* --- BOTTOM CENTER TEXT CONTENT (Inside Floating Window) --- */
+/* --- BOTTOM CENTER TEXT CONTENT (Inside Floating Window) --- */
+.content {
+  position: absolute;
+  z-index: 20;
+  /* Above video */
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 40px 30px;
+
+  /* Initial state for animation */
+  transform: translateY(30px);
+  text-align: center;
+
+  opacity: 0;
+  transition: opacity 0.8s ease, transform 0.8s ease;
+  transition-delay: 0.2s;
+  pointer-events: none;
+
+  /* Scrim for readability */
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.9) 0%, rgba(0, 0, 0, 0) 100%);
 }
 
-.feature-box h3 {
-  font-size: 1.4rem;
-  margin-bottom: 12px;
-  font-weight: 600;
+.content h1 {
+  font-size: 2.5rem;
+  /* Slightly smaller for card */
+  letter-spacing: 2px;
+  margin-bottom: 0.5rem;
+  text-transform: uppercase;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.8);
+  color: white;
 }
 
-.feature-box p {
+.content p {
   font-size: 1rem;
   line-height: 1.5;
-  opacity: 0.9;
-} */
+  color: #ddd;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.8);
+  max-width: 90%;
+  margin: 0 auto;
+}
+
+/* Back Button */
+.back-btn {
+  position: absolute;
+  top: 100px;
+  left: 40px;
+  z-index: 30;
+  background: rgba(0, 0, 0, 0.5);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  padding: 10px 20px;
+  border-radius: 30px;
+  color: white;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  cursor: pointer;
+  backdrop-filter: blur(10px);
+  opacity: 0;
+  transition: all 0.3s ease;
+}
+
+.slide.active .back-btn {
+  opacity: 1;
+  transition-delay: 1s;
+}
+
+.back-btn:hover {
+  background: white;
+  color: black;
+}
+
+/* --- ANIMATION UTILS --- */
+.slide.active .content {
+  opacity: 1;
+  transform: translateY(0);
+  /* Removed translateX(-50%) */
+  transition-delay: 0.8s;
+}
+
+/* Visible by default since menu is persistent */
+.menu-wrapper .feature-link {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.feature-link:nth-child(2) {
+  transition-delay: 0.1s;
+}
+
+.feature-link:nth-child(3) {
+  transition-delay: 0.2s;
+}
+
+.feature-link:nth-child(4) {
+  transition-delay: 0.3s;
+}
+
+.feature-link:nth-child(5) {
+  transition-delay: 0.4s;
+}
+
+.feature-link:nth-child(6) {
+  transition-delay: 0.5s;
+}
+
+.feature-link:nth-child(7) {
+  transition-delay: 0.6s;
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.loader {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #666;
+  font-size: 0.8rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  z-index: 0;
+}

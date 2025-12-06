@@ -484,7 +484,7 @@
 }
 
 /* hide nav on small screens */
-@media (max-width:900px) {
+@media (max-width:600px) {
   .mainNav {
     display: none
   }

@@ -127,60 +127,28 @@
   }
 
 
-  .heroInner {
-    width: 100%;
-    max-width: 400px;
-    margin: 0 auto;
-    text-align: center;
-  }
-.drawerNav ul {
-  font-family: "Orbitron", sans-serif;
-  letter-spacing: 1.6px;
-}
 
-  
-.logoText {
-  position: relative;
-  text-align: center;
-  font-family: 'Orbitron', sans-serif;
-  font-size: 28px;
-  font-weight: 700;
-  color: #fff;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-  transition: text-shadow 0.3s ease;
-}
-
- 
-  .tag2 {
-  position: relative;
-  font-family: "Orbitron", sans-serif;
-  letter-spacing: 2px;
-  width: 100%;
-  text-align: center;
-  font-size: 1.1rem;
-  opacity: 0.95;
-  font-weight: 300;
-  margin-top: 20rem;
-  padding-bottom: 5cm;
-
-}
-.tag3 {
-    display: block !important;
+  .drawerNav ul {
     font-family: "Orbitron", sans-serif;
-    letter-spacing: 2px;
+    letter-spacing: 1.6px;
+  }
+
+
+  .logoText {
     position: relative;
-    width: 85%;
-    margin: 1rem;
     text-align: center;
-    font-size: 0.7rem;
-    font-weight: 100;
-    color: #ffffff;
-    padding-top: 1.5cm;
-    /* margin-top: 20rem; */
-    margin-bottom: 15rem;
-    /* padding: 10px 14px; */
-}
+    font-family: 'Orbitron', sans-serif;
+    font-size: 28px;
+    font-weight: 700;
+    color: #fff;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    transition: text-shadow 0.3s ease;
+  }
+
+  .hero {
+    padding-top: 25%;
+  }
 
 }
 
@@ -489,7 +457,8 @@
   .mainNav {
     display: none
   }
+
   .tag1 {
     display: none
-  } 
+  }
 }

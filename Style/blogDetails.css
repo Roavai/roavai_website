@@ -19,6 +19,7 @@ body {
 /* Heading */
 .blog-details-container h1 {
   font-size: 32px;
+  font-family: "Poppins", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
   font-weight: 700;
   margin-bottom: 20px;
 }
@@ -34,6 +35,7 @@ body {
 .blog-details-container p {
   line-height: 1.8;
   font-size: 18px;
+  font-family: "Poppins", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
 }
 
 /* Back button */

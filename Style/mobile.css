@@ -2,7 +2,7 @@
 /* ===== PRODUCT MOBILE FINAL FIX ===== */
 
 /* ---------- Mobile product scroller fixes (put at end of mobile.css) ---------- */
-@media (max-width: 412px) {
+@media (max-width: 600px) {
 
 
 
@@ -77,7 +77,7 @@
   }
 
   /* Optional: small responsive tweak to improve visibility on very small phones */
-  @media (max-width: 420px) {
+  @media (max-width: 600px) {
     .stat {
       min-width: 92%;
       flex: 0 0 92%;
@@ -107,7 +107,7 @@
 }
 
 /* ===== HERO MOBILE ===== */
-@media (max-width: 412px) {
+@media (max-width: 600px) {
   /* *{
     max-width: 100% !important;
     overflow-x: hidden !important;
@@ -127,54 +127,36 @@
   }
 
 
-  .heroInner {
-    /* margin-left: 0;
-    margin-right: 5cm;
-    padding: 130px 16px;
-    text-align: center; */
 
-    width: 100%;
-    max-width: 400px;
-    margin: 0 auto;
-    text-align: center;
-  }
-
-
-  .heroTitle {
-    position: relative;
-    width: 90%;
-    text-align: center;
+  .drawerNav ul {
     font-family: "Orbitron", sans-serif;
-    margin-top: 2rem;
-    margin-bottom: 2rem;
-    font-size: 4rem;
-      /* smaller heading */
+    letter-spacing: 1.6px;
   }
 
-  .tag1 {
+
+  .logoText {
     position: relative;
-    width: 90%;
     text-align: center;
-    font-weight: 10;
-    font-size: 1.3rem;
-    margin-top: 0.1rem;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 28px;
+    font-weight: 700;
+    color: #fff;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    transition: text-shadow 0.3s ease;
   }
 
-  .tag2 {
-    position: relative;
-    width: 90%;
-    text-align: center;
-    font-size: 1.3rem;
-    font-weight: 10;
-    margin-top: 1rem;
-  } 
+  .hero {
+    padding-top: 25%;
+  }
+
 }
 
 /* ===== PRODUCT MOBILE ===== */
 /* ===== PRODUCT MOBILE FINAL FIX ===== */
 
 /* ---------- Mobile product scroller fixes (put at end of mobile.css) ---------- */
-@media (max-width: 412px) {
+@media (max-width: 600px) {
 
 
 
@@ -249,7 +231,7 @@
   }
 
   /* Optional: small responsive tweak to improve visibility on very small phones */
-  @media (max-width: 420px) {
+  @media (max-width: 600px) {
     .stat {
       min-width: 92%;
       flex: 0 0 92%;
@@ -279,7 +261,7 @@
 }
 
 /* ================= MOBILE FEATURE SECTION (FINAL) =================== */
-@media (max-width: 412px) {
+@media (max-width: 600px) {
 
   /* Stack vertically: video first, then cards */
   .features-wrapper {
@@ -370,7 +352,7 @@
 
 
 /* ================= BLOG SECTION =================== */
-@media (max-width: 412px) {
+@media (max-width: 600px) {
   .blog-section {
     width: 100%;
     height: 100vh;
@@ -406,7 +388,7 @@
 }
 
 /*========== About Us Section Mobile Fix ==========*/
-@media (max-width: 520px) {
+@media (max-width: 600px) {
 
   .about-title {
     font-size: 3.5rem !important;
@@ -447,7 +429,7 @@
 }
 
 /* ================= CONTACT US SECTION =================== */
-@media (max-width: 412px) {
+@media (max-width: 600px) {
   .title {
     text-align: center;
     margin-top: 30px;
@@ -471,8 +453,12 @@
 }
 
 /* hide nav on small screens */
-@media (max-width:900px) {
+@media (max-width:600px) {
   .mainNav {
+    display: none
+  }
+
+  .tag1 {
     display: none
   }
 }

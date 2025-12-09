@@ -1,6 +1,11 @@
-// contact.js  ← this is the script you load in HTML
 document.getElementById("contactForm").addEventListener("submit", async (e) => {
   e.preventDefault();
+
+  const submitBtn = document.getElementById("submitBtn");
+
+  submitBtn.disabled = true;
+  submitBtn.querySelector(".spinner").style.display = "inline-block";
+  submitBtn.querySelector(".btn-text").textContent = "Sending...";
 
   const name = document.getElementById("name").value.trim();
   const email = document.getElementById("email").value.trim();
@@ -23,5 +28,9 @@ document.getElementById("contactForm").addEventListener("submit", async (e) => {
     }
   } catch (err) {
     alert("Network error. Please try again.");
+  } finally {
+    submitBtn.disabled = false;
+    submitBtn.querySelector(".spinner").style.display = "none";
+    submitBtn.querySelector(".btn-text").textContent = "Send Message";
   }
 });

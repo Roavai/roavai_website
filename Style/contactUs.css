@@ -70,3 +70,21 @@ textarea {
 .submit-btn:hover {
   background: #cc0000;
 }
+
+.spinner {
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+  border: 0.2em solid currentColor;
+  border-right-color: transparent;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin-right: 0.5em;
+  vertical-align: middle;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}

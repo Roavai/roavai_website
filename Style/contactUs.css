@@ -55,36 +55,3 @@ textarea {
   resize: vertical;
   margin-bottom: 20px;
 }
-
-/* Submit button */
-.submit-btn {
-  background: #e60000;
-  color: white;
-  border: none;
-  padding: 15px 40px;
-  font-size: 16px;
-  cursor: pointer;
-  border-radius: 5px;
-}
-
-.submit-btn:hover {
-  background: #cc0000;
-}
-
-.spinner {
-  display: inline-block;
-  width: 1em;
-  height: 1em;
-  border: 0.2em solid currentColor;
-  border-right-color: transparent;
-  border-radius: 50%;
-  animation: spin 1s linear infinite;
-  margin-right: 0.5em;
-  vertical-align: middle;
-}
-
-@keyframes spin {
-  to {
-    transform: rotate(360deg);
-  }
-}

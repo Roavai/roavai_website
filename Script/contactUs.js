@@ -2,10 +2,18 @@ document.getElementById("contactForm").addEventListener("submit", async (e) => {
   e.preventDefault();
 
   const submitBtn = document.getElementById("submitBtn");
+  const spinner = submitBtn.querySelector(".spinner");
+  const btnText = submitBtn.querySelector(".btn-text");
+  const messageContainer = document.getElementById("formMessage");
 
+  // Clear any previous message
+  messageContainer.classList.remove("show", "success", "error");
+  messageContainer.textContent = "";
+
+  // Show loading state
   submitBtn.disabled = true;
-  submitBtn.querySelector(".spinner").style.display = "inline-block";
-  submitBtn.querySelector(".btn-text").textContent = "Sending...";
+  spinner.style.display = "inline-block";
+  btnText.textContent = "Sending...";
 
   const name = document.getElementById("name").value.trim();
   const email = document.getElementById("email").value.trim();
@@ -21,16 +29,33 @@ document.getElementById("contactForm").addEventListener("submit", async (e) => {
     const data = await res.json();
 
     if (res.ok) {
-      alert("Thank you! Your message was sent.");
-      e.target.reset();
+      // Success message
+      messageContainer.textContent =
+        "Thank you! Your message was sent successfully.";
+      messageContainer.classList.add("success", "show");
+      e.target.reset(); // Clear the form
     } else {
-      alert("Error: " + (data.error || "Try again"));
+      // Error from server
+      messageContainer.textContent =
+        "Error: " + (data.error || "Something went wrong. Please try again.");
+      messageContainer.classList.add("error", "show");
     }
   } catch (err) {
-    alert("Network error. Please try again.");
+    // Network or other error
+    messageContainer.textContent =
+      "Network error. Please check your connection and try again.";
+    messageContainer.classList.add("error", "show");
   } finally {
+    // Always restore button
     submitBtn.disabled = false;
-    submitBtn.querySelector(".spinner").style.display = "none";
-    submitBtn.querySelector(".btn-text").textContent = "Send Message";
+    spinner.style.display = "none";
+    btnText.textContent = "Send message";
+
+    // Optional: Auto-hide message after 5 seconds
+    if (messageContainer.classList.contains("show")) {
+      setTimeout(() => {
+        messageContainer.classList.remove("show");
+      }, 5000);
+    }
   }
 });

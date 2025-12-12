@@ -1,10 +1,4 @@
-/* ===== PRODUCT MOBILE ===== */
-/* ===== PRODUCT MOBILE FINAL FIX ===== */
-
-/* ---------- Mobile product scroller fixes (put at end of mobile.css) ---------- */
-@media (max-width: 600px) {
-
-
+@media (max-width: 768px) {
 
   .product-left {
     padding-left: -20cm !important;
@@ -77,7 +71,7 @@
   }
 
   /* Optional: small responsive tweak to improve visibility on very small phones */
-  @media (max-width: 600px) {
+  @media (max-width: 768px) {
     .stat {
       min-width: 92%;
       flex: 0 0 92%;
@@ -107,7 +101,7 @@
 }
 
 /* ===== HERO MOBILE ===== */
-@media (max-width: 600px) {
+@media (max-width: 768px) {
   /* *{
     max-width: 100% !important;
     overflow-x: hidden !important;
@@ -126,37 +120,26 @@
     /* Prevent full page sideways scroll only */
   }
 
-
-
-  .drawerNav ul {
-    font-family: "Orbitron", sans-serif;
-    letter-spacing: 1.6px;
+  .siteHeader {
+    height: 60px;
+    padding-left: 20px;
+    padding-right: 15px;
   }
 
-
-  .logoText {
-    position: relative;
-    text-align: center;
-    font-family: 'Orbitron', sans-serif;
-    font-size: 28px;
-    font-weight: 700;
-    color: #fff;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    transition: text-shadow 0.3s ease;
+  .mainNav {
+    display: none
   }
 
-  .hero {
-    padding-top: 25%;
+  .closeButton {
+    position: absolute;
+    right: 15px;
+    top: 8px;
   }
 
 }
 
-/* ===== PRODUCT MOBILE ===== */
-/* ===== PRODUCT MOBILE FINAL FIX ===== */
-
 /* ---------- Mobile product scroller fixes (put at end of mobile.css) ---------- */
-@media (max-width: 600px) {
+@media (max-width: 768px) {
 
 
 
@@ -231,7 +214,7 @@
   }
 
   /* Optional: small responsive tweak to improve visibility on very small phones */
-  @media (max-width: 600px) {
+  @media (max-width: 768px) {
     .stat {
       min-width: 92%;
       flex: 0 0 92%;
@@ -261,7 +244,7 @@
 }
 
 /* ================= MOBILE FEATURE SECTION (FINAL) =================== */
-@media (max-width: 600px) {
+@media (max-width: 768px) {
 
   /* Stack vertically: video first, then cards */
   .features-wrapper {
@@ -352,7 +335,7 @@
 
 
 /* ================= BLOG SECTION =================== */
-@media (max-width: 600px) {
+@media (max-width: 768px) {
   .blog-section {
     width: 100%;
     height: 100vh;
@@ -388,7 +371,7 @@
 }
 
 /*========== About Us Section Mobile Fix ==========*/
-@media (max-width: 600px) {
+@media (max-width: 768px) {
 
   .about-title {
     font-size: 3.5rem !important;
@@ -429,7 +412,7 @@
 }
 
 /* ================= CONTACT US SECTION =================== */
-@media (max-width: 600px) {
+@media (max-width: 768px) {
   .title {
     text-align: center;
     margin-top: 30px;
@@ -453,12 +436,4 @@
 }
 
 /* hide nav on small screens */
-@media (max-width:600px) {
-  .mainNav {
-    display: none
-  }
-
-  .tag1 {
-    display: none
-  }
-}
+@media (max-width: 768px) {}

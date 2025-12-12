@@ -6,13 +6,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <title>ROAVAI</title>
-  <link
-    href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Fascinate&family=Poppins:wght@100;200;300;500;700&display=swap"
-    rel="stylesheet">
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Fascinate&family=Poppins:wght@100;200;300;500;700&display=swap">
   <link rel="stylesheet" href="index.css" />
   <link rel="stylesheet" href="./Style/blog.css" />
   <link rel="stylesheet" href="./Style/contactUs.css" />
   <link rel="stylesheet" href="./Style/mobile.css">
+  <link rel="icon" type="image/png" href="Images/ROAVAI_ICON.png" />
 
   <!-- Import Map for Three.js -->
   <script type="importmap">
@@ -31,25 +31,25 @@
       y = l.getElementsByTagName(r)[0]; y.parentNode.insertBefore(t, y);
     })(window, document, "clarity", "script", "ubs41u2tpj");
   </script>
-  <link rel="icon" type="image/png" href="Images/ROAVAI_ICON.png" />
+
 </head>
 
-<body id="top">
+<body id="homeView">
 
   <!-- HEADER -->
   <header class="siteHeader">
 
     <!-- logo/title -->
-    <a href="#top" class="siteLogo" aria-label="ROAVAI home">
+    <a href="#homeView" class="siteLogo" aria-label="ROAVAI home">
       <span class="logoText">ROAVAI</span>
     </a>
 
     <!-- NAVBAR -->
     <nav class="mainNav">
       <ul>
-        <li><a href="#top" id="navHome">Home</a></li>
+        <li><a href="#homeView" id="navHome">Home</a></li>
         <li><a href="#product" id="navProduct">Product</a></li>
-        <li><a href="#blog" id="loadBlog">Blog</a></li>
+        <li><a href="#blog" id="navBlog">Blog</a></li>
         <li><a href="#aboutUs" id="navAbout">About</a></li>
         <li><a href="#contactForm" id="navContact">Contact</a></li>
       </ul>
@@ -64,9 +64,9 @@
     <button id="closeMenu" class="closeButton" aria-label="Close menu">✖︎</button>
     <nav class="drawerNav">
       <ul>
-        <li><a href="#top" id="drawerNavHome">Home</a></li>
+        <li><a href="#homeView" id="drawerNavHome">Home</a></li>
         <li><a href="#product" id="drawerNavProduct">Product</a></li>
-        <li><a href="#blog" id="drawerLoadBlog">Blog</a></li>
+        <li><a href="#blog" id="drawerNavBlog">Blog</a></li>
         <li><a href="#aboutUs" id="drawerNavAbout">About</a></li>
         <li><a href="#contactForm" id="drawerNavContact">Contact</a></li>
       </ul>
@@ -93,14 +93,16 @@
   <main class="hero" role="main">
 
     <!-- Background Video -->
-    <video class="heroVideo" autoplay muted playsinline src="Videos/robowink2.mp4">
+    <video class="heroVideo" autoplay muted playsinline poster="Images/robowink5.png">
+      <source src="Videos/robowink5.webm" type="video/webm">
+      <source src="Videos/robowink5.mp4" type="video/mp4">
+      Your browser does not support the video tag.
     </video>
 
     <!-- Background image -->
     <!-- <img class="heroImage" src="Images/0001.png" alt="ROAVAI Robot Image"> -->
 
     <div class="petIntro">
-      <span class="meetText">Meet</span>
       <h1 class="petName">Wini</h1>
     </div>
 
@@ -118,17 +120,16 @@
   <!-- About section-->
   <!-- <section id="aboutUs" class="about-section"></section> -->
 
-  <section id="top" class="top-section reveal-section"></section>
-  <section id="product" class="product-section reveal-section"></section>
-  <section id="blog" class="blog-section reveal-section"></section>
-  <section id="aboutUs" class="about-section reveal-section"></section>
+  <section id="product" class="product-section"></section>
+  <section id="blog" class="blog-section"></section>
+  <section id="aboutUs" class="about-section"></section>
 
 
 
   <!-- Contact Us section-->
 
-  <h1 class="title reveal-section">Contact Us</h1>
-  <form id="contactForm" class="contact-form reveal-section">
+  <h1 class="title">Contact Us</h1>
+  <form id="contactForm" class="contact-form">
     <!-- 
   <h1 class="title">Contact Us</h1>
   <form id="contactForm" class="contact-form"> -->
@@ -144,7 +145,7 @@
       <span class="spinner" style="display: none;"></span>
       <span class="btn-text">Send message</span>
     </button>
-    
+
   </form>
 
 

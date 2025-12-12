@@ -32,7 +32,7 @@
     top: 0;
     left: 0;
     right: 0;
-    height: 60px;
+    height: 65px;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -67,12 +67,11 @@
   /* center nav */
   .mainNav {
     position: absolute;
-    font-family: "Orbitron", sans-serif;
-    letter-spacing: 2px;
-
-    font-size: 16px;
     left: 50%;
     transform: translateX(-50%);
+    font-family: "Orbitron", sans-serif;
+    letter-spacing: 2px;
+    font-size: 16px;
   }
 
   .mainNav ul {
@@ -82,22 +81,37 @@
     padding: 0;
     margin: 0;
     align-items: center;
+    position: relative;
+  }
+
+  /* The sliding glass pill */
+  .nav-backdrop {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 0;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 50px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    z-index: 0;
+    /* Behind text */
+    opacity: 0;
+    pointer-events: none;
   }
 
   .mainNav a {
     text-decoration: none;
     color: rgba(255, 255, 255, 0.8);
     font-weight: 500;
-    padding: 8px 6px;
-  }
-
-  .mainNav a:hover {
-    background: rgba(139, 139, 139, 0.353);
-    border-radius: 18px;
-    box-shadow: 0 4px 30px rgba(126, 126, 126, 0.044);
-    backdrop-filter: blur(5px);
-    -webkit-backdrop-filter: blur(5px);
     padding: 10px 10px;
+    position: relative;
+    z-index: 1;
+    /* Above the pill */
   }
 
   /* header buttons */
@@ -125,7 +139,7 @@
     background: linear-gradient(to bottom, rgba(10, 10, 10, 0.35) 0%, rgba(10, 10, 10, 0.08) 100%);
     backdrop-filter: blur(4px);
     padding-top: 20px;
-    z-index: 1000;
+    z-index: 100;
     transform: translateX(100%);
     transition: transform 0.3s ease;
   }
@@ -282,7 +296,7 @@
     position: fixed;
     inset: 0;
     background: rgba(0, 0, 0, 0.5);
-    z-index: 100;
+    z-index: 99;
     opacity: 1;
     transition: opacity .25s ease;
     pointer-events: none;
@@ -303,7 +317,7 @@
     align-items: center;
     padding-left: 5%;
     padding-right: 5%;
-    padding-top: 6%;
+    padding-top: 75px;
     padding-bottom: 0%;
     color: var(--text-light);
     overflow: hidden;
@@ -332,19 +346,8 @@
   filter: brightness(80%);
 } */
 
-  /* subtle gradient overlay on hero to push left content brighter */
-  /* subtle gradient overlay on hero to push left content brighter */
-  .hero::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background: radial-gradient(circle at center, transparent 30%, rgba(0, 0, 0, 0.7) 100%);
-    z-index: 2;
-    pointer-events: none;
-  }
-
   .petIntro {
-    width: 400px;
+    width: 100%;
     position: relative;
     display: flex;
     flex-direction: column;
@@ -356,52 +359,17 @@
     animation: fadeUp 1s ease-out 2s both;
   }
 
-  .meetText {
-    align-self: flex-start;
-    font-family: "Orbitron", sans-serif;
-    font-size: 1.5rem;
-    font-weight: 200;
-    color: #ffffff8b;
-    margin-bottom: -15px;
-    margin-left: 80px;
-  }
-
   /* main title */
   .petName {
     text-align: center;
     font-family: "fascinate", system-ui;
-    font-size: 6rem;
+    font-size: 12vh;
+    padding-top: 0.5em;
     color: #ffffff8b;
     line-height: 1;
     margin: 0;
   }
 
-  /* tagline */
-  /* .tag1 {
-    position: relative;
-    width: 100%;
-    text-align: center;
-    font-family: "Orbitron", sans-serif;
-    font-size: 0.8rem;
-    opacity: 0.95;
-    font-weight: 300;
-    margin-top: -10px;
-  } */
-
-  /* 
-.mainNav a:hover {
-background: rgba(86, 86, 86, 0.353);
-border-radius: 18px;
- {
-background: rgba(86, 86, 86, 0.353);
-border-radius: 18px;
-box-shadow: 0 4px 30px rgba(0, 0, 0, 0.044);
-backdrop-filter: blur(1.9px);
--webkit-backdrop-filter: blur(1.9px);
-padding: 10px 10px;
-} */
-
-  /* Right side description */
   .petDescription {
     width: 75%;
     /* Occupy right side */
@@ -424,9 +392,8 @@ padding: 10px 10px;
     font-size: 0.8rem;
     opacity: 0.95;
     font-weight: 100;
+    padding-bottom: 2%;
   }
-
-
 
 
   @keyframes fadeUp {
@@ -449,24 +416,4 @@ padding: 10px 10px;
   #blog-section {
     min-height: 100vh;
     width: 100%;
-  }
-
-
-
-  /* ---- Smooth Scroll Reveal Animation ---- */
-  .reveal-section {
-    opacity: 0;
-    transform: scale(0.96) translateY(30px);
-    transition: opacity 0.9s ease-out, transform 1s cubic-bezier(0.16, 1, 0.3, 1);
-    will-change: transform, opacity;
-  }
-
-  .reveal-section.visible {
-    opacity: 1;
-    transform: scale(1) translateY(0);
-  }
-
-  /* Optional: slight parallax movement */
-  .reveal-section.parallax {
-    transition: transform 1.5s ease-out;
   }
